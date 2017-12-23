@@ -114,24 +114,26 @@ jQuery(function($) {
   });
 
 
-  /*----- Subscription Form ----- */
-
   $(document).ready(function() {
-    // jQuery Validation
-    $("#signup").validate({
-      // if valid, post data via AJAX
-      submitHandler: function(form) {
-        $.post("assets/php/subscribe.php", { email: $("#email").val() }, function(data) {
-          $('#response').html(data);
-        });
-      },
-      // all fields are required
-      rules: {
-        email: {
-          required: true,
-          email: true
-        }
-      }
+    $('.customer-logos').slick({
+      slidesToShow: 6,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 1500,
+      arrows: false,
+      dots: false,
+      pauseOnHover: false,
+      responsive: [{
+          breakpoint: 768,
+          settings: {
+              slidesToShow: 4
+          }
+      }, {
+          breakpoint: 520,
+          settings: {
+              slidesToShow: 3
+          }
+      }]
     });
   });
   });
