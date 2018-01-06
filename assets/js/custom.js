@@ -266,6 +266,126 @@ jQuery(function($) {
             "title": "Tokyo",
             "latitude": 35.6785,
             "longitude": 139.6823
+          }, {
+            "zoomLevel": 5,
+            "scale": 0.5,
+            "title": "Taipei",
+            "latitude": 25.0330,
+            "longitude": 121.5654
+          }, {
+            "zoomLevel": 5,
+            "scale": 0.5,
+            "title": "Zurich",
+            "latitude": 47.3769,
+            "longitude": 8.5417
+          }, {
+            "zoomLevel": 5,
+            "scale": 0.5,
+            "title": "Nijmegen",
+            "latitude": 51.8126,
+            "longitude": 5.8372
+          }, {
+            "zoomLevel": 5,
+            "scale": 0.5,
+            "title": "Ahmedabad",
+            "latitude": 23.0225,
+            "longitude": 72.5714
+          }, {
+            "zoomLevel": 5,
+            "scale": 0.5,
+            "title": "Austin",
+            "latitude": 30.2672,
+            "longitude": -97.7431
+          }, {
+            "zoomLevel": 5,
+            "scale": 0.5,
+            "title": "Los Angeles",
+            "latitude": 34.0522,
+            "longitude": -118.2437
+          }, {
+            "zoomLevel": 5,
+            "scale": 0.5,
+            "title": "Yerevan",
+            "latitude": 40.1792,
+            "longitude": 44.4991
+          }, {
+            "zoomLevel": 5,
+            "scale": 0.5,
+            "title": "San Francisco",
+            "latitude": 37.7749,
+            "longitude": -122.4194
+          }, {
+            "zoomLevel": 5,
+            "scale": 0.5,
+            "title": "Toronto",
+            "latitude": 43.6532,
+            "longitude": -79.3832
+          }, {
+            "zoomLevel": 5,
+            "scale": 0.5,
+            "title": "Sofia",
+            "latitude": 42.6977,
+            "longitude": 23.3219
+          }, {
+            "zoomLevel": 5,
+            "scale": 0.5,
+            "title": "Barcelona",
+            "latitude": 41.3851,
+            "longitude": 2.1734
+          }, {
+            "zoomLevel": 5,
+            "scale": 0.5,
+            "title": "São Paulo",
+            "latitude": 23.5505,
+            "longitude": -46.6333
+          }, {
+            "zoomLevel": 5,
+            "scale": 0.5,
+            "title": "Herzlia",
+            "latitude": 32.1624,
+            "longitude": 34.8447
+          }, {
+            "zoomLevel": 5,
+            "scale": 0.5,
+            "title": "Saint Petersburg",
+            "latitude": 27.7518,
+            "longitude": 82.6267
+          }, {
+            "zoomLevel": 5,
+            "scale": 0.5,
+            "title": "Papendrecht",
+            "latitude": 51.8425,
+            "longitude": 4.6942
+          }, {
+            "zoomLevel": 5,
+            "scale": 0.5,
+            "title": "La Plata",
+            "latitude": -34.9205,
+            "longitude": 57.9536
+          }, {
+            "zoomLevel": 5,
+            "scale": 0.5,
+            "title": "Montreal",
+            "latitude": 45.5017,
+            "longitude": -73.5673
+          }, {
+            "zoomLevel": 5,
+            "scale": 0.5,
+            "title": "Boulder",
+            "latitude": 40.0150,
+            "longitude": -105.2705
+          }, {
+            "zoomLevel": 5,
+            "scale": 0.5,
+            "title": "Bergamo",
+            "latitude": 45.6983,
+            "longitude": 9.6773
+          }, {
+            "zoomLevel": 5,
+            "scale": 0.5,
+            "title": "Ankara",
+            "latitude": 39.9334,
+            "longitude": 32.8597
           }
         ]
     }
