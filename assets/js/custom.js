@@ -336,7 +336,7 @@ jQuery(function($) {
             "zoomLevel": 5,
             "scale": 0.5,
             "title": "São Paulo",
-            "latitude": 23.5505,
+            "latitude": -23.5505,
             "longitude": -46.6333
           }, {
             "zoomLevel": 5,
@@ -361,7 +361,7 @@ jQuery(function($) {
             "scale": 0.5,
             "title": "La Plata",
             "latitude": -34.9205,
-            "longitude": 57.9536
+            "longitude": -57.9536
           }, {
             "zoomLevel": 5,
             "scale": 0.5,
