@@ -348,8 +348,8 @@ jQuery(function($) {
             "zoomLevel": 5,
             "scale": 0.5,
             "title": "Saint Petersburg",
-            "latitude": 27.7518,
-            "longitude": 82.6267
+            "latitude": 59.9343,
+            "longitude": 30.3351
           }, {
             "zoomLevel": 5,
             "scale": 0.5,
