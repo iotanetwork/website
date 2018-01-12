@@ -192,3 +192,7 @@
 .at-social__item svg:hover {
   fill: #788D96;
 }
+
+.teammodal-full {
+    width: 80rem!important;
+}

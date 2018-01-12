@@ -446,3 +446,5 @@ jQuery(function($) {
 
     return holder;
   }
+
+$('#teamModal').modal('handleUpdate')

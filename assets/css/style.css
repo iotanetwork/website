@@ -604,6 +604,7 @@ body {
 	display: flex;
 	-webkit-flex-direction: column;
 	flex-direction: column;
+	padding-top: 1rem;
 }
 
 .flex-split .f-left {
@@ -1904,7 +1905,7 @@ body {
     color: #1da1f2;
 }
 
-.slack:hover {
+.commenting:hover {
     color: #77d4b6;
 }
 
@@ -1940,7 +1941,7 @@ body {
     position: absolute;
   }
 .map-marker .dot {
-    border: 10px solid #fff601;
+    border: 10px solid #0e54b2;
     background: transparent;
     -webkit-border-radius: 60px;
     -moz-border-radius: 60px;
