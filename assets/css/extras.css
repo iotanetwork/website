@@ -114,3 +114,8 @@
 .slick-arrow.slick-hidden {
     display: none;
 }
+
+.logo-top {
+    width: 4rem;
+    margin-top: -1.5rem !important;
+}
