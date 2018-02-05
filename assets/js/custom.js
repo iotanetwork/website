@@ -452,7 +452,7 @@ $('#teamModal').modal('handleUpdate')
 
 $(document).ready(function() {
     $('#calendar').fullCalendar({
-        googleCalendarApiKey: '545872319542-jrb91a9vgu83o43cgrf7j7ddapne00k1.apps.googleusercontent.com',
+        googleCalendarApiKey: 'AIzaSyBNznyn08Hp7R7V679waZ6XNxw30N-jaQk',
         events: {
             googleCalendarId: 'es8ftbmdvt487j6hp6btdti2j8@group.calendar.google.com'
         }
