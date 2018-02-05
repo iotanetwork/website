@@ -28,6 +28,13 @@
     <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
     <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
     <!-- Map End -->
+    <script type="text/javascript" src="assets/js/jquery-2.1.1.js"></script>
+    <!-- Fullcalendar Start -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.8.2/fullcalendar.min.css' />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.8.2/fullcalendar.min.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.8.2/gcal.min.js"></script>
+    <!-- Fullcalendar End -->
 </head>
 
 <body>
@@ -148,6 +155,13 @@
                         <div id="chartdiv"></div>
                     </div>
                 </div>
+            </div>
+        </div>
+
+        <div id="events" class="events">
+            <div class="container text-center">
+                <h1 class="wow fadeInDown" data-wow-delay="0.1s">Events</h1>
+                <div id='calendar' ></div>
             </div>
         </div>
 
@@ -1069,7 +1083,6 @@
     </div>
     </div>
 
-    <script type="text/javascript" src="assets/js/jquery-2.1.1.js"></script>
     <script type="text/javascript" src="assets/js/jquery.validate.min.js"></script>
     <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
     <!-- <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script> -->

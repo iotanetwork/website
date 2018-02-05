@@ -2004,3 +2004,18 @@ body {
       opacity: 0.0;
    }
   }
+
+.events {
+	background-color: #F9F9F9;
+	margin-bottom: 2rem;
+}
+
+  .events h1 {
+     font-family: 'Roboto';
+     /*font-size: 28px;*/
+     font-weight: 300;
+     line-height: 1.4;
+     color: #252525;
+     margin-bottom: 20px;
+     font-size: 34px;
+  }

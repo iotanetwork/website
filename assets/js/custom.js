@@ -450,11 +450,11 @@ jQuery(function($) {
 $('#teamModal').modal('handleUpdate')
 
 
-
-var link = document.querySelector('link[rel="import"]');
-var content = link.import;
-
-// Grab DOM from warning.html's document.
-var el = content.querySelector('.head_includes');
-
-document.body.appendChild(el.cloneNode(true));
+$(document).ready(function() {
+    $('#calendar').fullCalendar({
+        googleCalendarApiKey: '545872319542-jrb91a9vgu83o43cgrf7j7ddapne00k1.apps.googleusercontent.com',
+        events: {
+            googleCalendarId: 'es8ftbmdvt487j6hp6btdti2j8@group.calendar.google.com'
+        }
+    });
+});
