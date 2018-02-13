@@ -427,7 +427,7 @@ exports.teamMembers = function() {
             'preName': '',
             'name': 'Ralf',
             'postName': 'Rottmann',
-            'picture': 'http://rottmann.net/wp-content/uploads/2018/01/ralf_rottmann_1000x1000_bandw_half.png',
+            'picture': 'https://rottmann.net/wp-content/uploads/2018/01/ralf_rottmann_1000x1000_bandw_half.png',
             'detail': '',
             'location': 'Germany',
             'socialHandles': {},
