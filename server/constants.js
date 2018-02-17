@@ -430,9 +430,181 @@ exports.teamMembers = function() {
             'picture': 'https://rottmann.net/wp-content/uploads/2018/01/ralf_rottmann_1000x1000_bandw_half.png',
             'detail': '',
             'location': 'Germany',
+            'socialHandles': {
+                'discord': 'ralf'
+            },
+            'isActive': true
+        },
+        {
+            'memberId': 33,
+            'memberHandle': 'greenprotocol',
+            'preName': '',
+            'name': 'Darren',
+            'postName': 'Olson',
+            'picture': 'https://i.imgur.com/6kFWdvQ.jpg',
+            'detail': '',
+            'location': 'Toronto, Canada',
             'socialHandles': {},
             'isActive': true
         },
+        {
+            'memberId': 34,
+            'memberHandle': 'leandrofrancademello',
+            'preName': '',
+            'name': 'Leandro',
+            'postName': 'França de Mello',
+            'picture': 'https://i.imgur.com/6kFWdvQ.jpg',
+            'detail': '',
+            'location': 'Rio de Janeiro, Brazil',
+            'socialHandles': {},
+            'isActive': true
+        },
+        {
+            'memberId': 35,
+            'memberHandle': 'MikiGeike',
+            'preName': '',
+            'name': 'Michael',
+            'postName': 'Geike',
+            'picture': 'https://i.imgur.com/6kFWdvQ.jpg',
+            'detail': '',
+            'location': 'Berlin, Germany',
+            'socialHandles': {},
+            'isActive': true
+        },
+        {
+            'memberId': 36,
+            'memberHandle': 'angelica',
+            'preName': '',
+            'name': 'Angelica',
+            'postName': 'Nightingale',
+            'picture': 'https://photos.app.goo.gl/QaKyTX1f7lVzvqOm2',
+            'detail': '',
+            'location': 'London, United Kingdom',
+            'socialHandles': {
+                'discord': 'Lady IOTA'
+            },
+            'isActive': true
+        },
+        {
+            'memberId': 37,
+            'memberHandle': 'JisseP',
+            'preName': '',
+            'name': 'Jisse',
+            'postName': 'Plaggenborg',
+            'picture': 'https://i.imgur.com/6kFWdvQ.jpg',
+            'detail': '',
+            'location': 'Utrecht, Netherlands',
+            'socialHandles': {
+                'discord': 'JisseP'
+            },
+            'isActive': true
+        },
+        {
+            'memberId': 38,
+            'memberHandle': 'rafaelrohden',
+            'preName': '',
+            'name': 'Rafael',
+            'postName': 'Rohden',
+            'picture': 'https://www.tanglefy.com/IMG_20131102_131004_2.jpg',
+            'detail': '',
+            'location': 'Leominster, United States',
+            'socialHandles': {
+                'discord': 'raafaell'
+            },
+            'isActive': true
+        },
+        {
+            'memberId': 39,
+            'memberHandle': 'rajivshah',
+            'preName': '',
+            'name': 'Rajiv',
+            'postName': 'Shah',
+            'picture': 'https://ca.slack-edge.com/T1MAUQMD4-U5N5NE2LS-588f282b9128-512',
+            'detail': '',
+            'location': 'Wilmington, DE, United States',
+            'socialHandles': {
+                'discord': 'Rajiv Shah #5322'
+            },
+            'isActive': true
+        },
+        {
+            'memberId': 40,
+            'memberHandle': 'ajuhanb',
+            'preName': '',
+            'name': 'Juhan',
+            'postName': 'Bernadt',
+            'picture': 'https://i.imgur.com/6kFWdvQ.jpg',
+            'detail': '',
+            'location': 'Tallinn, Estonia',
+            'socialHandles': {},
+            'isActive': true
+        },
+        {
+            'memberId': 41,
+            'memberHandle': 'kevinley',
+            'preName': '',
+            'name': 'Kevin',
+            'postName': 'Ley',
+            'picture': 'https://i.imgur.com/6kFWdvQ.jpg',
+            'detail': '',
+            'location': 'Luxembourg Netherlands',
+            'socialHandles': {
+                'discord': 'kevinley'
+            },
+            'isActive': true
+        },
+        {
+            'memberId': 42,
+            'memberHandle': 'Max_E',
+            'preName': '',
+            'name': 'Max',
+            'postName': 'Eichelbaum',
+            'picture': 'https://i.imgur.com/6kFWdvQ.jpg',
+            'detail': '',
+            'location': 'Montreal, Canada',
+            'socialHandles': {
+                'discord': 'Max_E'
+            },
+            'isActive': true
+        },
+        {
+            'memberId': 43,
+            'memberHandle': 'originalcopy',
+            'preName': '',
+            'name': 'Alexi',
+            'postName': 'Stoinis',
+            'picture': 'https://i.imgur.com/6kFWdvQ.jpg',
+            'detail': '',
+            'location': 'New York City, United States',
+            'socialHandles': {
+                'discord': 'originalcopy'
+            },
+            'isActive': true
+        },
+        {
+            'memberId': 44,
+            'memberHandle': '',
+            'preName': '',
+            'name': '',
+            'postName': '',
+            'picture': 'https://i.imgur.com/6kFWdvQ.jpg',
+            'detail': '',
+            'location': '',
+            'socialHandles': {},
+            'isActive': true
+        },
+        {
+            'memberId': 44,
+            'memberHandle': '',
+            'preName': '',
+            'name': '',
+            'postName': '',
+            'picture': 'https://i.imgur.com/6kFWdvQ.jpg',
+            'detail': '',
+            'location': '',
+            'socialHandles': {},
+            'isActive': true
+        }
     ]
 };
 
