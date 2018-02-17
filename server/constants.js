@@ -477,7 +477,7 @@ exports.teamMembers = function() {
             'preName': '',
             'name': 'Angelica',
             'postName': 'Nightingale',
-            'picture': 'https://photos.app.goo.gl/QaKyTX1f7lVzvqOm2',
+            'picture': 'https://s3.amazonaws.com/iota-ien/members/lady_iota.jpg',
             'detail': '',
             'location': 'London, United Kingdom',
             'socialHandles': {
