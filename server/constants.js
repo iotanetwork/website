@@ -25,7 +25,7 @@ exports.socialAccounts = function() {
         },
         'linkedin': {
             'iconClass': 'fa-linkedin',
-            'baseUrl': 'https://www.linkedin.com/'
+            'baseUrl': 'https://www.linkedin.com/in/'
         },
         'github': {
             'iconClass': 'fa-github',
@@ -491,11 +491,13 @@ exports.teamMembers = function() {
             'preName': '',
             'name': 'Jisse',
             'postName': 'Plaggenborg',
-            'picture': 'https://i.imgur.com/6kFWdvQ.jpg',
+            'picture': 'https://i.imgur.com/KSWeOOJ.png',
             'detail': '',
             'location': 'Utrecht, Netherlands',
             'socialHandles': {
-                'discord': 'JisseP'
+                'discord': 'JisseP',
+                'twitter': 'Jisse93',
+                'linkedin': 'jisseplaggenborg'
             },
             'isActive': true
         },

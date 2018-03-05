@@ -15,7 +15,7 @@
                                         <ul class="at-social">
                                             {% for teamSocialHandleKey, teamSocialHandleValue in teamMember['socialHandles'] %}
                                                 {% if teamSocialHandleKey and teamSocialHandleKey=='discord' %}
-                                                    <li class="at-social__item"><a href="{{socialAccounts[teamSocialHandleKey]['baseUrl']}}{{teamSocialHandleValue}} "><i class="fa {{socialAccounts[teamSocialHandleKey]['iconClass']}}" aria-hidden="true">{{socialAccounts[teamSocialHandleKey]['baseUrl']}}{{teamSocialHandleValue}}</i></a></li>
+                                                    <li class="at-social__item"><i class="fa {{socialAccounts[teamSocialHandleKey]['iconClass']}}" aria-hidden="true">{{socialAccounts[teamSocialHandleKey]['baseUrl']}}{{teamSocialHandleValue}}</i></li>
                                                 {% else %}
                                                     <li class="at-social__item"><a href="{{socialAccounts[teamSocialHandleKey]['baseUrl']}}{{teamSocialHandleValue}} "><i class="fa {{socialAccounts[teamSocialHandleKey]['iconClass']}}" aria-hidden="true"></i></a></li>
                                                 {% endif %}
@@ -45,7 +45,7 @@
                                                     <ul class="at-social">
                                                         {% for teamSocialHandleKey, teamSocialHandleValue in teamMember['socialHandles'] %}
                                                             {% if teamSocialHandleKey and teamSocialHandleKey=='discord' %}
-                                                                <li class="at-social__item"><a href="{{socialAccounts[teamSocialHandleKey]['baseUrl']}}{{teamSocialHandleValue}} "><i class="fa {{socialAccounts[teamSocialHandleKey]['iconClass']}}" aria-hidden="true">{{socialAccounts[teamSocialHandleKey]['baseUrl']}}{{teamSocialHandleValue}}</i></a></li>
+                                                                <li class="at-social__item"><i class="fa {{socialAccounts[teamSocialHandleKey]['iconClass']}}" aria-hidden="true">{{socialAccounts[teamSocialHandleKey]['baseUrl']}}{{teamSocialHandleValue}}</i></li>
                                                             {% else %}
                                                                 <li class="at-social__item"><a href="{{socialAccounts[teamSocialHandleKey]['baseUrl']}}{{teamSocialHandleValue}} "><i class="fa {{socialAccounts[teamSocialHandleKey]['iconClass']}}" aria-hidden="true"></i></a></li>
                                                             {% endif %}
