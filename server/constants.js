@@ -45,7 +45,7 @@ exports.teamMembers = function() {
             'memberId': 1,
             'memberHandle': 'kev',
             'preName': '',
-            'name': 'Kevi',
+            'name': 'Kevin',
             'postName': 'Chen',
             'picture': 'https://i.imgur.com/6kFWdvQ.jpg',
             'detail': '',
