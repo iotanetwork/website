@@ -561,7 +561,7 @@ exports.teamMembers = function() {
             'preName': '',
             'name': 'Max',
             'postName': 'Eichelbaum',
-            'picture': 'https://i.imgur.com/6kFWdvQ.jpg',
+            'picture': 'http://aeronook.com/wp-content/uploads/2016/09/IMG_3364.jpg',
             'detail': '',
             'location': 'Montreal, Canada',
             'socialHandles': {
