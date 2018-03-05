@@ -367,7 +367,7 @@ exports.teamMembers = function() {
             'preName': '',
             'name': 'Çağrı',
             'postName': 'Sevinç',
-            'picture': 'https://i.imgur.com/6kFWdvQ.jpg',
+            'picture': 'https://i.imgur.com/VsgyH7y.png',
             'detail': '',
             'location': 'Ankara, Turkey',
             'socialHandles': {},
