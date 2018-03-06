@@ -613,16 +613,13 @@ exports.socialAccounts = function() {
 // };
 
 exports.teamMembers = function (cb) {
-    var url = 'https://api.jsonbin.io/b/5a9db48ca121bc097fe7a3ff';
+    var url = 'https://api.jsonbin.io/b/5a9db48ca121bc097fe7a3ff/2';
     var options = {
         uri: url,
-        // qs: {
-        //     access_token: 'xxxxx xxxxx' // -> uri + '?access_token=xxxxx%20xxxxx'
-        // },
         headers: {
             'User-Agent': 'Request-Promise'
         },
-        json: true // Automatically parses the JSON string in the response
+        json: true
     };
 
     rp(options)

@@ -11,7 +11,7 @@ router.get('/', function(req, res, next) {
     constants.teamMembers(function (teamMembers) {
         console.log('teamMembers:', teamMembers);
         res.render('pages/home', {
-            title: 'IOTA Evangelist Netowrk | IEN',
+            title: 'IOTA Evangelist Network | IEN',
             teamMembers: teamMembers,
             socialAccounts: socialAccounts
         });
