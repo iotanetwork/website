@@ -613,7 +613,7 @@ exports.socialAccounts = function() {
 // };
 
 exports.teamMembers = function (cb) {
-    var url = 'https://api.jsonbin.io/b/5a9db48ca121bc097fe7a3ff/4';
+    var url = 'https://jsonblob.com/api/jsonblob/df8753e2-247d-11e8-894a-31a87a1770e7';
     var options = {
         uri: url,
         headers: {
