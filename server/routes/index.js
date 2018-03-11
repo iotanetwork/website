@@ -8,13 +8,11 @@ var constants = require('../constants');
 
 router.get('/', function(req, res, next) {
     var socialAccounts = constants.socialAccounts();
-    constants.teamMembers(function (teamMembers) {
-        console.log('teamMembers:', teamMembers);
-        res.render('pages/home', {
-            title: 'IOTA Evangelist Network | IEN',
-            teamMembers: teamMembers,
-            socialAccounts: socialAccounts
-        });
+    let teamMembers = constants.teamMembers();
+    res.render('pages/home', {
+        title: 'IOTA Evangelist Network | IEN',
+        teamMembers: teamMembers,
+        socialAccounts: socialAccounts
     });
 });
 
