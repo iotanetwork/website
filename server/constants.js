@@ -51,20 +51,21 @@ exports.teamMembers = function(cb) {
     csv().fromStream(request.get(memberDataFromGoogleSheet))
     .on('csv', (csvRow) => {
         let pictureUrl = 'http://www.iotaclimbing.uk/s/cc_images/teaserbox_258203.png';
+        let socialHandles = {};
         if (csvRow[5] && csvRow[5].length>0) {
             pictureUrl = csvRow[5]
         }
+        if (csvRow[4]) {
+            socialHandles["discord"] = csvRow[4];
+        }
         finalResult.push({
             "isActive": true,
-            "socialHandles": {
-                "discord": csvRow[4]
-            },
+            "socialHandles": socialHandles,
             "location": csvRow[3]+', '+csvRow[2],
             "detail": "",
             "picture": pictureUrl,
-            "postName": csvRow[1],
-            "name": csvRow[0],
-            "preName": "",
+            "lastName": csvRow[1],
+            "firstName": csvRow[0],
             "memberHandle": csvRow[0].toLowerCase(),
             "memberId": sl
         });
