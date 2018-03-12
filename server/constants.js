@@ -575,6 +575,10 @@ exports.teamMembers = function(cb) {
     let sl = 1;
     csv().fromStream(request.get(memberDataFromGoogleSheet))
     .on('csv', (csvRow) => {
+        let pictureUrl = 'http://www.iotaclimbing.uk/s/cc_images/teaserbox_258203.png';
+        if (csvRow[5] && csvRow[5].length>0) {
+            pictureUrl = csvRow[5]
+        }
         finalResult.push({
             "isActive": true,
             "socialHandles": {
@@ -582,7 +586,7 @@ exports.teamMembers = function(cb) {
             },
             "location": csvRow[3]+', '+csvRow[2],
             "detail": "",
-            "picture": csvRow[5],
+            "picture": pictureUrl,
             "postName": csvRow[1],
             "name": csvRow[0],
             "preName": "",
