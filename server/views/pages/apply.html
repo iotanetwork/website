@@ -1,0 +1,276 @@
+{% extends '../layout.html' %} {% block title %}{% endblock %} {% block content %}
+
+<link href="assets/css/apply.css" rel="stylesheet" type="text/css">
+
+<div class="container container-apply">
+    <div class="wizard" id="myWizard">
+        <section>
+            <h4 class="page-title text-center">Join IEN</h4>
+        </section>
+        <div class="wizard__progress">
+            <ul class="wizard__labels nav nav-tabs">
+                <li style="width:25%;" class="col-xs-12 active">
+                    <a href="#personal-info" data-toggle="tab" data-step="1">
+                        <i class="fa fa-user-secret wizard__icon"></i> Personal Info</a>
+                </li>
+                <li style="width:25%;" class="col-xs-12 ">
+                    <a href="#professional-info" data-toggle="tab" data-step="2">
+                        <i class="fa fa-suitcase wizard__icon"></i> Professional Info</a>
+                </li>
+                <li style="width:25%;" class="col-xs-12 ">
+                    <a href="#self-assessment" data-toggle="tab" data-step="3">
+                        <i class="fa fa-star wizard__icon"></i> Self Assessment</a>
+                </li>
+                <li style="width:25%;" class="col-xs-12 " id="lastli">
+                    <a href="#validate" data-toggle="tab" data-step="4">
+                        <i class="fa fa-check wizard__icon"></i> Validate
+                    </a>
+                </li>
+            </ul>
+            <div class="progress">
+                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="5" style="width: 25%;"> </div>
+            </div>
+        </div>
+        <div class="tab-content">
+            <div class="tab-pane fade in active" id="personal-info">
+
+                <section>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label class="control-label" for="email">Email</label>
+                                <input type="email" class="form-control input-sm" id="email">
+                            </div>
+                        </div>
+                        <!-- / end col -->
+
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="control-label" for="name--first"> First Name<span class="required">*</span></label>
+                                <input type="text" class="form-control input-sm" id="name__first">
+                            </div>
+                        </div>
+                        <!-- / end col -->
+
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="control-label" for="name--last"> Last Name <span class="required">*</span></label>
+                                <input type="text" class="form-control input-sm" id="name__last">
+                            </div>
+                        </div>
+                        <!-- / end col -->
+
+
+                        <div class="col-sm-3">
+                            <!-- ================= country ================= -->
+                            <div class="form-group">
+                                <label class="control-label" for="country">Country</label>
+                                <select class="form-control input-sm" id="country">
+                                    <option>United States</option>
+                                    <option>United Kingdom</option>
+                                    <option>Italy</option>
+                                    <option>France</option>
+                                    <option>Spain</option>
+                                    <option>Japan</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- / end col -->
+
+                        <div class="col-sm-3">
+                                <div class="form-group">
+                                    <label class="control-label" for="info--city">City</label>
+                                    <input type="text" class="form-control input-sm" id="info--city" placeholder="city" />
+                                </div>
+                        </div>
+                        <!-- / end col -->
+
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label class="control-label" for="discord--handle"> Discord Handle<span class="required">*</span></label>
+                                <input type="text" class="form-control input-sm" id="discord__handle">
+                            </div>
+                        </div>
+                        <!-- / end col -->
+
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <label class="control-label" for="telegram--handle"> Telegram Handle <span class="required">*</span></label>
+                                <input type="text" class="form-control input-sm" id="telegram__handle">
+                            </div>
+                        </div>
+                        <!-- / end col -->
+
+                    </div>
+                </section>
+                <section class="text-right">
+                    <button type="button" class="btn btn-primary btn-sm next">Continue</button>
+                </section>
+
+            </div>
+            <div class="tab-pane fade" id="professional-info">
+
+                <section>
+                    <div class="row">
+
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="control-label" for="profession"> Full Time Professional Role or Background<span class="required">*</span></label>
+                                <input type="text" class="form-control input-sm" id="profession">
+                            </div>
+                        </div>
+                        <!-- / end col -->
+
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="control-label" for="linkedin"> LinkedIn <span class="required">*</span></label>
+                                <input type="text" class="form-control input-sm" id="linkedin">
+                            </div>
+                        </div>
+                        <!-- / end col -->
+
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="control-label" for="personal--website"> Personal Website URL </label>
+                                <input type="text" class="form-control input-sm" id="personal__website">
+                            </div>
+                        </div>
+                        <!-- / end col -->
+
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label class="control-label" for="resume"> Please upload your CV/Resume </label>
+                                <input type="file" class="form-control input-sm" id="resume">
+                            </div>
+                        </div>
+                        <!-- / end col -->
+
+                    </div>
+                </section>
+                <section class="text-right">
+                    <button type="button" class="btn btn-primary btn-sm next">Continue</button>
+                </section>
+
+            </div>
+            <div class="tab-pane fade" id="self-assessment">
+                <section>
+                    <div class="row">
+
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label class="control-label" for="generalDlt"> General DLT: How long have you been interested in DLT and how were you first introduced? What are your contributions? </label>
+                                <textarea class="form-control" rows="3" id="generalDlt"></textarea>
+                            </div>
+                        </div>
+                        <!-- / end col -->
+
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label class="control-label" for="generalIota"> IOTA: How long have you been in the IOTA community and how were you first introduced? What are your contributions? </label>
+                                <textarea class="form-control" rows="3" id="generalIota"></textarea>
+                            </div>
+                        </div>
+                        <!-- / end col -->
+
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label class="control-label" for="rateIota"> How confident are you in your ability to explain the differences and benefits of IOTA/Tangle over other DLTs to people?<span class="required">*</span></label>
+                                <div class="col-sm-2">
+                                    <p>I can sometimes explain the differences and benefits of IOTA / the Tangle?</p>
+                                </div>
+                                <div class="col-sm-7">
+                                    <input type="range" min=1 max=10 value=5 class="form-control input-sm slider" id="rateIota">
+                                </div>
+                                <div class="col-sm-2">
+                                    <p>I can explain the benefits of IOTA and the use cases for all industries and applications. I have a very deep technical understanding of the current phase of development of the network and understand the current limitations based on the current progress in development.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- / end col -->
+
+                    </div>
+                </section>
+                <section class="text-right">
+                    <button type="button" class="btn btn-primary btn-sm next" id="last">Continue</button>
+                </section>
+            </div>
+            <div class="tab-pane fade" id="validate">
+                <section>
+                    <div class="alerts--child alerts--success">
+                        <div class="alerts__icon">
+                            <i class="fa fa-check"></i>
+                        </div>
+                        <div class="alerts__text">
+                            <span class="alerts__type">Congratulations! </span>IEN will assess your application form and get in touch with you soon!
+                        </div>
+
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-daterangepicker/1.3.22/daterangepicker.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.3/moment.js"></script>
+<script>
+    $("#enter-id").slideUp();
+
+
+    //Single date range pickers
+    $(function() {
+        $('.js-single-daterange').daterangepicker({
+            singleDatePicker: true,
+            showDropdowns: true
+        });
+    });
+
+
+    $("#submit-id-button").click(function() {
+        $(this).hide();
+        /*$( "#submit-id" ).slideUp( "fast", function() {
+          // Animation complete.
+        });*/
+        $("#enter-id").slideDown("fast", function() {
+            // Animation complete.
+        });
+        $("#enter-id-button").removeAttr('disabled');
+
+    });
+
+
+
+
+    $('.next').click(function() {
+        var nextId = $(this).parents('.tab-pane').next().attr("id");
+        $('[href=#' + nextId + ']').tab('show');
+        return false;
+    })
+
+    $('a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
+        //update progress
+        var step = $(e.target).data('step');
+        var percent = (parseInt(step) / 4) * 100;
+
+        $('.progress-bar').css({
+            width: percent + '%'
+        });
+        //$('.progress-bar').text("Step " + step + " of 5");
+        e.relatedTarget // previous tab
+    })
+
+    $('.first').click(function() {
+        $('#myWizard a:first').tab('show')
+    })
+
+
+    $('#last').click(function() {
+        $('#lastli').addClass('success');
+    });
+</script>
+
+{% endblock %}

@@ -20,6 +20,12 @@ router.get('/', function(req, res, next) {
     });
 });
 
+router.get('/apply', function(req, res, next) {
+    res.render('pages/apply', {
+        title: 'Apply to IOTA Evangelist Network | IEN'
+    });
+});
+
 router.get('/404', function(req, res, next) {
     res.render('pages/error-pages/not_found', { title: 'IOTA Evangelist Netowrk | IEN | 404 | Not Found' });
 });
