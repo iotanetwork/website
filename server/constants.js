@@ -35,8 +35,8 @@ exports.socialAccounts = function() {
             'baseUrl': 'https://github.com/'
         },
         'discord': {
-            'iconClass': 'fa-commenting social commenting',
-            'baseUrl': '@'
+            'iconClass': 'fa-discord',
+            'baseUrl': 'https://discord.gg/csc7Dak'
         }
     };
     return socialAccountValues;
