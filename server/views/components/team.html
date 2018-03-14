@@ -15,7 +15,7 @@
                                         <ul class="at-social">
                                             {% for teamSocialHandleKey, teamSocialHandleValue in teamMember['socialHandles'] %}
                                                 {% if teamSocialHandleKey and teamSocialHandleKey=='discord' %}
-                                                    <li class="at-social__item"><i class="fa {{socialAccounts[teamSocialHandleKey]['iconClass']}}" aria-hidden="true">{{socialAccounts[teamSocialHandleKey]['baseUrl']}}{{teamSocialHandleValue}}</i></li>
+                                                    <li class="at-social__item"><a href="{{socialAccounts[teamSocialHandleKey]['baseUrl']}} "><i class="fa {{socialAccounts[teamSocialHandleKey]['iconClass']}}" aria-hidden="true"> @{{teamSocialHandleValue}}</i></a></li>
                                                 {% else %}
                                                     <li class="at-social__item"><a href="{{socialAccounts[teamSocialHandleKey]['baseUrl']}}{{teamSocialHandleValue}} "><i class="fa {{socialAccounts[teamSocialHandleKey]['iconClass']}}" aria-hidden="true"></i></a></li>
                                                 {% endif %}
@@ -26,38 +26,31 @@
                             {% endif %}
                         {% endfor %}
                     </div>
-                    <a class="btn btn-action btn-gplus wow fadeInDown" data-wow-delay="0.3s" data-toggle="modal" data-target="#teamModal"><span></span> <span>See All</span></a>
-                    <div class="modal fade teammodal-full" id="teamModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-                        <div class="modal-dialog teammodal-full" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLongTitle">The IEN Team</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="at-grid" data-column="5" data-wow-delay="0.2s">
-                                        {% for teamMember in teamMembers %}
-                                            <div class="at-column">
-                                                <div class="at-user">
-                                                    <div class="at-user__avatar"><img src="{{teamMember['picture']}}" /></div>
-                                                    <div class="at-user__name">{{teamMember['firstName']}} {{teamMember['lastName']}}</div>
-                                                    <div class="at-user__title">{{teamMember['location']}}</div>
-                                                    <ul class="at-social">
-                                                        {% for teamSocialHandleKey, teamSocialHandleValue in teamMember['socialHandles'] %}
-                                                            {% if teamSocialHandleKey and teamSocialHandleKey=='discord' %}
-                                                                <li class="at-social__item"><i class="fa {{socialAccounts[teamSocialHandleKey]['iconClass']}}" aria-hidden="true">{{socialAccounts[teamSocialHandleKey]['baseUrl']}}{{teamSocialHandleValue}}</i></li>
-                                                            {% else %}
-                                                                <li class="at-social__item"><a href="{{socialAccounts[teamSocialHandleKey]['baseUrl']}}{{teamSocialHandleValue}} "><i class="fa {{socialAccounts[teamSocialHandleKey]['iconClass']}}" aria-hidden="true"></i></a></li>
-                                                            {% endif %}
-                                                        {% endfor %}
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        {% endfor %}
-                                    </div>
-                                </div>
+                    <a class="btn btn-action btn-gplus wow fadeInDown" data-wow-delay="0.3s" data-toggle="collapse" data-target="#teamModal"><span></span> <span>See All</span></a>
+                    <br/><br/>
+                    <div id ="teamModal" class="collapse">
+                      <div class="at-grid" data-column="3" data-wow-delay="0.2s">
+                        {% for teamMember in teamMembers %}
+                          {% if teamMember['memberId']>6 %}
+                            <div class="at-column">
+                              <div class="at-user">
+                                <div class="at-user__avatar"><img src="{{teamMember['picture']}}" /></div>
+                                <div class="at-user__name">{{teamMember['firstName']}} {{teamMember['lastName']}}</div>
+                                <div class="at-user__title">{{teamMember['location']}}</div>
+                                <ul class="at-social">
+                                  {% for teamSocialHandleKey, teamSocialHandleValue in teamMember['socialHandles'] %}
+                                    {% if teamSocialHandleKey and teamSocialHandleKey=='discord' %}
+                                      <li class="at-social__item"><a href="{{socialAccounts[teamSocialHandleKey]['baseUrl']}} "><i class="fa {{socialAccounts[teamSocialHandleKey]['iconClass']}}" aria-hidden="true"> @{{teamSocialHandleValue}}</i></a></li>
+                                    {% else %}
+                                      <li class="at-social__item"><a href="{{socialAccounts[teamSocialHandleKey]['baseUrl']}}{{teamSocialHandleValue}} "><i class="fa {{socialAccounts[teamSocialHandleKey]['iconClass']}}" aria-hidden="true"></i></a></li>
+                                    {% endif %}
+                                  {% endfor %}
+                                </ul>
+                              </div>
                             </div>
-                        </div>
+                          {% endif %}
+                        {% endfor %}
+                      </div>
                     </div>
                 </div>
             </div>
