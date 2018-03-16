@@ -50,7 +50,7 @@ exports.teamMembers = function(cb) {
     let sl = 1;
     csv().fromStream(request.get(memberDataFromGoogleSheet))
     .on('csv', (csvRow) => {
-        let pictureUrl = 'http://www.iotaclimbing.uk/s/cc_images/teaserbox_258203.png';
+        let pictureUrl = 'https://i.imgur.com/pLzV5XF.png';
         let socialHandles = {};
         if (csvRow[5] && csvRow[5].length>0) {
             pictureUrl = csvRow[5]
