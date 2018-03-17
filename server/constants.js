@@ -46,14 +46,20 @@ exports.socialAccounts = function() {
 exports.teamMembers = function(cb) {
     let memberDataFromGoogleSheet = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRTus6J1vSHZSwkGzPg7iGnzGHx9kNcMj9dAiO5oDYQQSra00PIbW-U8O5V-4s__7LiPQIkA1sNgUzV/pub?gid=965069893&single=true&output=csv";
 
-    let finalResult = []
+    let finalResult = [];
     let sl = 1;
+    let noPicList = false;
+    let noPicResult = [];
     csv().fromStream(request.get(memberDataFromGoogleSheet))
     .on('csv', (csvRow) => {
         let pictureUrl = 'https://i.imgur.com/pLzV5XF.png';
         let socialHandles = {};
+        noPicList = false
         if (csvRow[5] && csvRow[5].length>0) {
             pictureUrl = csvRow[5]
+        }
+        else {
+            noPicList = true;
         }
         if (csvRow[4]) {
             socialHandles["discord"] = csvRow[4];
@@ -70,17 +76,32 @@ exports.teamMembers = function(cb) {
         if (csvRow[9]) {
             socialHandles["github"] = csvRow[9];
         }
-        finalResult.push({
-            "isActive": true,
-            "socialHandles": socialHandles,
-            "location": csvRow[3]+', '+csvRow[2],
-            "detail": "",
-            "picture": pictureUrl,
-            "lastName": csvRow[1],
-            "firstName": csvRow[0],
-            "memberHandle": csvRow[0].toLowerCase(),
-            "memberId": sl
-        });
+        if(noPicList) {
+            noPicResult.push({
+                "isActive": true,
+                "socialHandles": socialHandles,
+                "location": csvRow[3]+', '+csvRow[2],
+                "detail": "",
+                "picture": pictureUrl,
+                "lastName": csvRow[1],
+                "firstName": csvRow[0],
+                "memberHandle": csvRow[0].toLowerCase(),
+                "memberId": sl
+            })
+        }
+        else {
+            finalResult.push({
+                "isActive": true,
+                "socialHandles": socialHandles,
+                "location": csvRow[3]+', '+csvRow[2],
+                "detail": "",
+                "picture": pictureUrl,
+                "lastName": csvRow[1],
+                "firstName": csvRow[0],
+                "memberHandle": csvRow[0].toLowerCase(),
+                "memberId": sl
+            });
+        }
         sl = sl+1;
     })
     .on('done', (error) => {
@@ -88,6 +109,7 @@ exports.teamMembers = function(cb) {
             console.log('error:', error);
             cb(error);
         }
+        finalResult = finalResult.concat(noPicResult);
         cb(null, finalResult);
     })
 

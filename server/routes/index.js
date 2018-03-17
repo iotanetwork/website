@@ -12,7 +12,6 @@ router.get('/', function(req, res, next) {
         if (err) {
             teamMembers = [];
         }
-        console.log('teamMembers:', teamMembers[4]);
         res.render('pages/home', {
             title: 'IOTA Evangelist Network | IEN',
             teamMembers: teamMembers,
