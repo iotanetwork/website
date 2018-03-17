@@ -58,6 +58,18 @@ exports.teamMembers = function(cb) {
         if (csvRow[4]) {
             socialHandles["discord"] = csvRow[4];
         }
+        if (csvRow[6]) {
+            socialHandles["linkedin"] = csvRow[6];
+        }
+        if (csvRow[7]) {
+            socialHandles["facebook"] = csvRow[7];
+        }
+        if (csvRow[8]) {
+            socialHandles["twitter"] = csvRow[8];
+        }
+        if (csvRow[9]) {
+            socialHandles["github"] = csvRow[9];
+        }
         finalResult.push({
             "isActive": true,
             "socialHandles": socialHandles,
