@@ -119,8 +119,6 @@ exports.partners = function() {
     return []
 };
 
-
-
 exports.mentors = function() {
     return [
         {
