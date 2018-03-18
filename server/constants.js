@@ -119,6 +119,10 @@ exports.partners = function() {
     return []
 };
 
+exports.projects = function() {
+    return []
+};
+
 exports.mentors = function() {
     return [
         {
