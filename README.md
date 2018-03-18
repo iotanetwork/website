@@ -26,4 +26,4 @@ Replace the config with proper values (iff needed). [This is temporary. Will be 
 If you've `nodemon` you can use that as well.
 
 
-Go to your favorite browser and open http://localhost:3000/ to view our website in action.
+Go to your favorite browser and open http://localhost:4000/ to view our website in action.
