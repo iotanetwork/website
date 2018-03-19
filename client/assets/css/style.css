@@ -456,7 +456,7 @@ body {
 
 
 .hero {
-	padding: 100px 0 50px 0;
+	padding: 100px 0 75px 0;
 	/*background: linear-gradient(to right bottom,#3b1f5d,#633c84,#a25fa7,#b672ba);
 	background: #7B4EFF;*/
 	background: url(../img/space-bg.jpg) no-repeat center center;
@@ -468,7 +468,8 @@ body {
 }
 
 .hero .intro {
-	padding: 75px 0 75px 0;
+	padding: 150px 0 150px 0;
+	margin-bottom: 100px;
 }
 
 .hero .intro h1 {
@@ -1778,6 +1779,11 @@ body {
 
 @media only screen and (max-width: 766px) {
 
+	.intro {
+		margin-left: 25px;
+		margin-right: 25px;
+	}
+
 	.flex-split .f-right {
 		flex: 1 0 50%;
 		height: 360px;
@@ -1814,6 +1820,11 @@ body {
 
 
 @media screen and (max-width: 399px) {
+
+	.intro {
+		margin-left: 25px;
+		margin-right: 25px;
+	}
 
 	.cta-sub {
 		text-align: center;
@@ -1895,6 +1906,10 @@ body {
  .map-wrapper {
    max-width: 1000px;
    margin: auto;
+ }
+
+ .reach {
+	 margin-bottom: 50px;
  }
 
  .reach h1 {
@@ -2024,7 +2039,7 @@ body {
 
 .events {
 	background-color: #F9F9F9;
-	margin-bottom: 2rem;
+	margin-bottom: 80px;
 }
 
   .events h1 {
