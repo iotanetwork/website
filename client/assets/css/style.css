@@ -124,7 +124,6 @@ body {
   z-index: 9999;
 }
 
-
 .logo {
 	position: absolute;
 	left: 2%;
@@ -133,7 +132,6 @@ body {
 }
 
 /* ------ Navbar Styling Starts ----- */
-
 
 .navbar {
 	font-size: 14px;
@@ -188,7 +186,6 @@ body {
 	-o-transition: 200ms;
 	transition: 200ms;
 }
-
 
 .navbar-default .navbar-brand:hover {
 	color: #111111;
@@ -283,7 +280,7 @@ body {
 
 	.navbar {
 		padding-top: 5px;
-		height: 60px;
+		height: 90px;
 	}
 
   .navbar-default {
@@ -314,7 +311,7 @@ body {
 
   .navbar-default .navbar-brand {
     color: #41CD52;
-		padding: 15px 15px !important;
+		padding: 35px 15px !important;
   }
 
   .navbar-default .navbar-toggle .icon-bar {
@@ -330,20 +327,20 @@ body {
 
 .navbar.past-main {
   transition: all 0.6s ease;
-  height: 50px;
+  height: 90px;
   background-color: rgba(255, 255, 255, 0.99);
 }
 
 .navbar.effect-main:active {
   -webkit-transition: height 0.6s; /* For Safari 3.1 to 6.0 */
   transition: height 0.6s;
-  height: 60px;
+  height: 90px;
 }
 
 .navbar.past-main {
 	font-size: 14px;
-	padding-top: 5px;
-	height: 60px;
+	/*padding-top: 22px;*/
+	height: 90px;
 	-webkit-box-shadow: 0 1px 5px 0 rgba(96, 96, 96, 0.3);
 	-moz-box-shadow: 0 1px 5px 0 rgba(96, 96, 96, 0.3);
 	box-shadow: 0 1px 5px 0 rgba(96, 96, 96, 0.3);
