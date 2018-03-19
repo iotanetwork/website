@@ -12,13 +12,13 @@
     "password": "update me",
     "database": "update_me",
     "host": "update me",
-    "dialect": "update me"
+    "dialect": "postgres"
   },
   "production": {
     "username": "update me",
     "password": "update me",
     "database": "update me",
     "host": "update me",
-    "dialect": "update me"
+    "dialect": "postgres"
   }
 }
