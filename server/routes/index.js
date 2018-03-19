@@ -27,9 +27,17 @@ router.get('/apply', function(req, res, next) {
 });
 
 router.get('/team', function(req, res, next) {
-    res.render('pages/team', {
-        title: 'Global Team | IEN'
-    });
+  var socialAccounts = constants.socialAccounts();
+  constants.teamMembers(function (err, teamMembers) {
+      if (err) {
+          teamMembers = [];
+      }
+      res.render('pages/team', {
+          title: 'Global Team | IEN',
+          teamMembers: teamMembers,
+          socialAccounts: socialAccounts
+      });
+  });
 });
 
 router.get('/404', function(req, res, next) {

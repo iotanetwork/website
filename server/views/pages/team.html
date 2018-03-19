@@ -1,17 +1,41 @@
 {% extends '../teamlayout.html' %} {% block title %}{% endblock %}
 {% block content %}
+
     <div id="main" class="main">
         {% include '../components/teamheader.html' %}
-
-        <!--{% include '../components/about.html' %}
-        {% include '../components/reach.html' %}-->
     </div>
-
-    <!--{% include '../components/events.html' %}-->
-
-    {% include '../components/team.html' %}
-
-    <!--{% include '../components/partner.html' %}-->
+    <br/><br/>
+    <div id="team" class="team cta-team-outer">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                    <div class="cta-team-inner">
+                        <h1 class="wow fadeInDown" data-wow-delay="0.1s">Our Awesome Team</h1>
+                        <div class="at-grid" data-column="4" data-wow-delay="0.2s">
+                            {% for teamMember in teamMembers %}
+                            <div class="at-column">
+                              <div class="at-user">
+                                <div class="at-user__avatar"><img src="{{teamMember['picture']}}" /></div>
+                                <div class="at-user__name">{{teamMember['firstName']}} {{teamMember['lastName']}}</div>
+                                <div class="at-user__title">{{teamMember['location']}}</div>
+                                <ul class="at-social">
+                                  {% for teamSocialHandleKey, teamSocialHandleValue in teamMember['socialHandles'] %}
+                                  {% if teamSocialHandleKey and teamSocialHandleKey=='discord' %}
+                                  <li class="at-social__item"><a href="{{socialAccounts[teamSocialHandleKey]['baseUrl']}} "><i class="fa {{socialAccounts[teamSocialHandleKey]['iconClass']}}" aria-hidden="true"> @{{teamSocialHandleValue}}</i></a></li>
+                                  {% else %}
+                                  <li class="at-social__item"><a href="{{socialAccounts[teamSocialHandleKey]['baseUrl']}}{{teamSocialHandleValue}} "><i class="fa {{socialAccounts[teamSocialHandleKey]['iconClass']}}" aria-hidden="true"></i></a></li>
+                                  {% endif %}
+                                  {% endfor %}
+                                </ul>
+                              </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div id="video-div" class="flex-split">
         <div class="f-left">

@@ -117,7 +117,7 @@
   margin: 16px 0 0;
   opacity: 1;
 }
-@media (max-width: 800px) {
+@media (max-width: 1000px) {
   .at-column {
     width: 50% !important;
     max-width: 50% !important;
@@ -126,7 +126,7 @@
         flex-basis: 50% !important;
   }
 }
-@media (max-width: 600px) {
+@media (max-width: 500px) {
   .at-column {
     width: 100% !important;
     max-width: 100% !important;
