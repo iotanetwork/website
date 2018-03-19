@@ -26,6 +26,12 @@ router.get('/apply', function(req, res, next) {
     });
 });
 
+router.get('/team', function(req, res, next) {
+    res.render('pages/team', {
+        title: 'Global Team | IEN'
+    });
+});
+
 router.get('/404', function(req, res, next) {
     res.render('pages/error-pages/not_found', { title: 'IOTA Evangelist Netowrk | IEN | 404 | Not Found' });
 });

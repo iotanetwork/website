@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include 'partials/head_meta.html' %}
+    <title>{{ title }}</title>
+    {% include 'partials/head_includes.html' %}
+</head>
+<body>
+    <div class="wrapper">
+        {% include 'partials/teamMenu.html' %}
+        {% block content %}
+        {% endblock %}
+        {% include 'components/footer.html' %}
+    </div>
+    </div>
+    {% include 'partials/footer_includes.html' %}
+</body>
+</html>
