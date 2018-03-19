@@ -1,0 +1,56 @@
+{% extends '../layout.html' %} {% block title %}{% endblock %}
+{% block content %}
+
+    <div id="main" class="main">
+    </div>
+    <br/><br/><br/><br/><br/><br/>
+    <div id="team" class="team cta-team-outer">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                    <div class="cta-team-inner">
+                        <h1 class="wow fadeInDown" data-wow-delay="0.1s">Our Awesome Team</h1>
+                        <div class="at-grid" data-column="4" data-wow-delay="0.2s">
+                            {% for teamMember in teamMembers %}
+                            <div class="at-column">
+                              <div class="at-user">
+                                <div class="at-user__avatar"><img src="{{teamMember['picture']}}" /></div>
+                                <div class="at-user__name">{{teamMember['firstName']}} {{teamMember['lastName']}}</div>
+                                <div class="at-user__title">{{teamMember['location']}}</div>
+                                <ul class="at-social">
+                                  {% for teamSocialHandleKey, teamSocialHandleValue in teamMember['socialHandles'] %}
+                                  {% if teamSocialHandleKey and teamSocialHandleKey=='discord' %}
+                                  <li class="at-social__item"><a href="{{socialAccounts[teamSocialHandleKey]['baseUrl']}} "><i class="fa {{socialAccounts[teamSocialHandleKey]['iconClass']}}" aria-hidden="true"> @{{teamSocialHandleValue}}</i></a></li>
+                                  {% else %}
+                                  <li class="at-social__item"><a href="{{socialAccounts[teamSocialHandleKey]['baseUrl']}}{{teamSocialHandleValue}} "><i class="fa {{socialAccounts[teamSocialHandleKey]['iconClass']}}" aria-hidden="true"></i></a></li>
+                                  {% endif %}
+                                  {% endfor %}
+                                </ul>
+                              </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="video-div" class="flex-split">
+        <div class="f-left">
+            <div class="left-content wow fadeInLeft" data-wow-delay="0s">
+                <h2 class="wow fadeInDown" data-wow-delay="0.1s"><span>Why IOTA</span>?</h2>
+                <div class="wow fadeInDown secondary-text" data-wow-delay="0.2s">As the Internet-of-Things keep expanding, the need for interoperability and sharing of resources become a necessity. IOTA enables companies to explore new business-2-business models by making every technological resource a potential
+                    service to be traded on an open market in real time, with no fees.</div>
+                <a href="http://iota.org" class="btn btn-action wow fadeInDown" data-wow-delay="0.3s" target="_blank"><span>Know More</span></a>
+            </div>
+        </div>
+        <div class="f-right">
+            <div class="video-icon hidden-xs text-center">
+                <a class="wow fadeInUp" data-wow-delay="0.2s" href="https://www.youtube.com/watch?v=ivWqqfzunhI" target="_blank"><i class="ion-ios-play"></i></a>
+            </div>
+        </div>
+    </div>
+
+    {% include '../components/contact.html' %}
+{% endblock %}

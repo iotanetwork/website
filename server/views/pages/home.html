@@ -1,24 +1,23 @@
-{% extends '../layout.html' %} {% block title %}{% endblock %}
+{% extends '../layout.html' %}
+
+{% block title %} {% endblock %}
+
 {% block content %}
+
     <div id="main" class="main">
         {% include '../components/header.html' %}
-
         {% include '../components/about.html' %}
-
         {% include '../components/reach.html' %}
     </div>
 
     {% include '../components/events.html' %}
-
     {% include '../components/team.html' %}
-
-    {% include '../components/partner.html' %}
 
     <div id="video-div" class="flex-split">
         <div class="f-left">
             <div class="left-content wow fadeInLeft" data-wow-delay="0s">
                 <h2 class="wow fadeInDown" data-wow-delay="0.1s"><span>Why IOTA</span>?</h2>
-                <div class="wow fadeInDown secondary-text" data-wow-delay="0.2s">As the Internet-of-Things keep expanding, the need for interoperability and sharing of resources become a necessity. IOTA enables companies to explore new business-2-business models by making every technological resource a potential
+                <div class="wow fadeInDown secondary-text" data-wow-delay="0.2s">As the Internet-of-Things keeps expanding, the need for interoperability and resource sharing become a necessity. IOTA enables companies to explore new business-2-business models by making every technological resource a potential
                     service to be traded on an open market in real time, with no fees.</div>
                 <a href="http://iota.org" class="btn btn-action wow fadeInDown" data-wow-delay="0.3s" target="_blank"><span>Know More</span></a>
             </div>
@@ -31,4 +30,5 @@
     </div>
 
     {% include '../components/contact.html' %}
+
 {% endblock %}
