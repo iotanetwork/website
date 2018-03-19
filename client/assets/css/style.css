@@ -81,6 +81,13 @@ body {
 }
 */
 
+#about, #contact, #reach, #team, #partner, #events {
+	margin-top: -100px;
+	padding-top: 100px;
+	background-color: #fff;
+}
+
+
 ::-moz-selection {
     color: #1106CC;
     background: #FFFFFF;
@@ -197,7 +204,7 @@ body {
 	font-family: 'Nunito';
 	font-size: 15px;
   font-weight: 700;
-	color: rgba(255,255,255,0.7) !important;
+	color: rgba(200,200,200,0.7) !important;
   text-transform: capitalize;
   /* color: #b3b3b3; */
   -webkit-transition: all 0.5s;
@@ -285,7 +292,7 @@ body {
 
   .navbar-default {
     border: 0px;
-    background-color: transparent;
+    background-color: #FFFFFF;
   }
 
 	.navbar-default .navbar-collapse {
@@ -294,11 +301,20 @@ body {
 	  background-color: #FFFFFF;
 	}
 
+	.navbar-toggle {
+		margin-top: 25px;
+	}
+
   .navbar-default .navbar-collapse {
     border: 0;
     border-color: transparent;
+		color: #111111;
   }
 
+  #bs-example-navbar-collapse-1 {
+		margin-top: 15px;
+		color: #111;
+	}
 
   .navbar-default .navbar-nav > li> a {
     color: #111111;
