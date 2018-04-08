@@ -1,10 +1,12 @@
-{
+// Any Config to be used throughout the project is written here
+
+module.exports = {
   "development": {
-    "username": "update me",
-    "password": "update me",
-    "database": "update_me",
-    "host": "127.0.0.1",
-    "port": "5432",
+    "username": process.env.DB_USER || "postgres",
+    "password": process.env.DB_PASSWORD || "",
+    "database": process.env.DB_NAME || "ien",
+    "host": process.env.DB_HOST || "127.0.0.1",
+    "port": process.env.DB_PORT || "5432",
     "dialect": "postgres"
   },
   "test": {
@@ -21,4 +23,4 @@
     "host": "update me",
     "dialect": "postgres"
   }
-}
+};
