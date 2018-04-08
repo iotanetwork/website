@@ -3,7 +3,7 @@
 module.exports = {
     server: {
         host: '0.0.0.0',
-        port: process.env.PORT || 4000,
+        port: process.env.PORT || 3000,
         appName: 'ien',
         environment: process.env.environment || 'local',
         nameServer: 'http://localhost:3000'

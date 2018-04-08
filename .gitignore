@@ -4,3 +4,6 @@
 # Idea Files
 .idea
 node_modules
+
+# Env Files
+.env
