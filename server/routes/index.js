@@ -8,7 +8,7 @@ var constants = require('../constants');
 
 router.get('/', function(req, res, next) {
     var socialAccounts = constants.socialAccounts();
-    constants.teamMembers(function (err, teamMembers) {
+    helpers.getAllMembers(function (err, teamMembers) {
         if (err) {
             teamMembers = [];
         }
@@ -28,7 +28,7 @@ router.get('/apply', function(req, res, next) {
 
 router.get('/team', function(req, res, next) {
   var socialAccounts = constants.socialAccounts();
-  constants.teamMembers(function (err, teamMembers) {
+  helpers.getAllMembers(function (err, teamMembers) {
       if (err) {
           teamMembers = [];
       }

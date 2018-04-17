@@ -42,10 +42,8 @@ exports.socialAccounts = function() {
     return socialAccountValues;
 };
 
-
 exports.teamMembers = function(cb) {
     let memberDataFromGoogleSheet = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRTus6J1vSHZSwkGzPg7iGnzGHx9kNcMj9dAiO5oDYQQSra00PIbW-U8O5V-4s__7LiPQIkA1sNgUzV/pub?gid=965069893&single=true&output=csv";
-
     let finalResult = [];
     let sl = 1;
     let noPicList = false;

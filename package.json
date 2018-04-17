@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./server/bin/www"
+    "start": "node ./server/bin/www",
+    "migrate": "node_modules/.bin/sequelize db:migrate"
   },
   "dependencies": {
     "async": "^2.1.4",

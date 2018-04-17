@@ -6,7 +6,7 @@
                     <h1 class="wow fadeInDown" data-wow-delay="0.1s">Our Awesome Team</h1>
                     <div class="at-grid" data-column="3" data-wow-delay="0.2s">
                         {% for teamMember in teamMembers %}
-                            {% if teamMember['memberId']<7 %}
+                            {% if teamMember['id']<7 %}
                                 <div class="at-column">
                                     <div class="at-user">
                                         <div class="at-user__avatar"><img src="{{teamMember['picture']}}" /></div>
