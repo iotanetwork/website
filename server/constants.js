@@ -84,6 +84,7 @@ exports.teamMembers = function(cb) {
                 "lastName": csvRow[1],
                 "firstName": csvRow[0],
                 "memberHandle": csvRow[0].toLowerCase(),
+                "memberEmail": csvRow[10],
                 "memberId": sl
             })
         }
@@ -97,6 +98,7 @@ exports.teamMembers = function(cb) {
                 "lastName": csvRow[1],
                 "firstName": csvRow[0],
                 "memberHandle": csvRow[0].toLowerCase(),
+                "memberEmail": csvRow[10],
                 "memberId": sl
             });
         }
