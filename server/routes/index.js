@@ -3,6 +3,7 @@ var router = express.Router();
 var models = require('../models/index');
 var helpers = require('../helpers');
 var constants = require('../constants');
+var utils = require('../utils');
 
 // Routes
 
@@ -12,11 +13,22 @@ router.get('/', function(req, res, next) {
         if (err) {
             teamMembers = [];
         }
-        res.render('pages/home', {
-            title: 'IOTA Evangelist Network | IEN',
-            teamMembers: teamMembers,
-            socialAccounts: socialAccounts
-        });
+        if(teamMembers.length > 0) {
+            utils.sortTeamMembersByPicture(teamMembers, function (err, teamMembersSorted) {
+                res.render('pages/home', {
+                    title: 'IOTA Evangelist Network | IEN',
+                    teamMembers: teamMembersSorted,
+                    socialAccounts: socialAccounts
+                });
+            })
+        }
+        else {
+            res.render('pages/home', {
+                title: 'IOTA Evangelist Network | IEN',
+                teamMembers: teamMembers,
+                socialAccounts: socialAccounts
+            });
+        }
     });
 });
 
@@ -32,11 +44,22 @@ router.get('/team', function(req, res, next) {
       if (err) {
           teamMembers = [];
       }
-      res.render('pages/team', {
-          title: 'Global Team | IEN',
-          teamMembers: teamMembers,
-          socialAccounts: socialAccounts
-      });
+      if(teamMembers.length > 0) {
+          utils.sortTeamMembersByPicture(teamMembers, function (err, teamMembersSorted) {
+              res.render('pages/team', {
+                  title: 'Global Team | IEN',
+                  teamMembers: teamMembersSorted,
+                  socialAccounts: socialAccounts
+              });
+          })
+      }
+      else {
+          res.render('pages/team', {
+              title: 'Global Team | IEN',
+              teamMembers: teamMembers,
+              socialAccounts: socialAccounts
+          });
+      }
   });
 });
 

@@ -11,7 +11,7 @@
                                     <div class="at-user">
                                         <div class="at-user__avatar"><img src="{{teamMember['picture']}}" /></div>
                                         <div class="at-user__name">{{teamMember['firstName']}} {{teamMember['lastName']}}</div>
-                                        <div class="at-user__title">{{teamMember['location']}}</div>
+                                        <!-- <div class="at-user__title">{{teamMember['location']}}</div> -->
                                         <ul class="at-social">
                                             {% for teamSocialHandleKey, teamSocialHandleValue in teamMember['socialHandles'] %}
                                                 {% if teamSocialHandleKey and teamSocialHandleKey=='discord' %}
