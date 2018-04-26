@@ -39,7 +39,7 @@
                         <div class="col-sm-12">
                             <div class="form-group">
                                 <label class="control-label" for="email">Email</label>
-                                <input type="email" class="form-control input-sm" id="email">
+                                <input type="email" class="form-control input-sm" id="email" value="anirudha@ien.io">
                             </div>
                         </div>
                         <!-- / end col -->
@@ -47,7 +47,7 @@
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label class="control-label" for="name--first"> First Name<span class="required">*</span></label>
-                                <input type="text" class="form-control input-sm" id="name__first">
+                                <input type="text" class="form-control input-sm" id="name__first" value="Kumar">
                             </div>
                         </div>
                         <!-- / end col -->
@@ -55,7 +55,7 @@
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label class="control-label" for="name--last"> Last Name <span class="required">*</span></label>
-                                <input type="text" class="form-control input-sm" id="name__last">
+                                <input type="text" class="form-control input-sm" id="name__last" value="Anirudha">
                             </div>
                         </div>
                         <!-- / end col -->
@@ -80,7 +80,7 @@
                         <div class="col-sm-3">
                                 <div class="form-group">
                                     <label class="control-label" for="info--city">City</label>
-                                    <input type="text" class="form-control input-sm" id="info--city" placeholder="city" />
+                                    <input type="text" class="form-control input-sm" id="info--city" placeholder="city" value="Tokyo" />
                                 </div>
                         </div>
                         <!-- / end col -->
@@ -88,7 +88,7 @@
                         <div class="col-sm-3">
                             <div class="form-group">
                                 <label class="control-label" for="discord--handle"> Discord Handle<span class="required">*</span></label>
-                                <input type="text" class="form-control input-sm" id="discord__handle">
+                                <input type="text" class="form-control input-sm" id="discord__handle" value="anistark">
                             </div>
                         </div>
                         <!-- / end col -->
@@ -96,7 +96,7 @@
                         <div class="col-sm-3">
                             <div class="form-group">
                                 <label class="control-label" for="telegram--handle"> Telegram Handle <span class="required">*</span></label>
-                                <input type="text" class="form-control input-sm" id="telegram__handle">
+                                <input type="text" class="form-control input-sm" id="telegram__handle" value="anistark">
                             </div>
                         </div>
                         <!-- / end col -->
@@ -116,7 +116,7 @@
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label class="control-label" for="profession"> Full Time Professional Role or Background<span class="required">*</span></label>
-                                <input type="text" class="form-control input-sm" id="profession">
+                                <input type="text" class="form-control input-sm" id="profession" value="Product Architect">
                             </div>
                         </div>
                         <!-- / end col -->
@@ -124,7 +124,7 @@
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label class="control-label" for="linkedin"> LinkedIn <span class="required">*</span></label>
-                                <input type="text" class="form-control input-sm" id="linkedin">
+                                <input type="text" class="form-control input-sm" id="linkedin" value="kranirudha">
                             </div>
                         </div>
                         <!-- / end col -->
@@ -132,7 +132,7 @@
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <label class="control-label" for="personal--website"> Personal Website URL </label>
-                                <input type="text" class="form-control input-sm" id="personal__website">
+                                <input type="text" class="form-control input-sm" id="personal__website" value="anirudha.org">
                             </div>
                         </div>
                         <!-- / end col -->
@@ -159,7 +159,7 @@
                         <div class="col-sm-12">
                             <div class="form-group">
                                 <label class="control-label" for="generalDlt"> General DLT: How long have you been interested in DLT and how were you first introduced? What are your contributions? </label>
-                                <textarea class="form-control" rows="3" id="generalDlt"></textarea>
+                                <textarea class="form-control" rows="3" id="generalDlt">Some gibberish!</textarea>
                             </div>
                         </div>
                         <!-- / end col -->
@@ -167,7 +167,7 @@
                         <div class="col-sm-12">
                             <div class="form-group">
                                 <label class="control-label" for="generalIota"> IOTA: How long have you been in the IOTA community and how were you first introduced? What are your contributions? </label>
-                                <textarea class="form-control" rows="3" id="generalIota"></textarea>
+                                <textarea class="form-control" rows="3" id="generalIota">Some valueable gibberish!!</textarea>
                             </div>
                         </div>
                         <!-- / end col -->
@@ -191,7 +191,7 @@
                     </div>
                 </section>
                 <section class="text-right">
-                    <button type="button" class="btn btn-primary btn-sm next" id="last">Continue</button>
+                    <button type="button" class="btn btn-primary btn-sm next" id="last">Submit</button>
                 </section>
             </div>
             <div class="tab-pane fade" id="validate">
@@ -220,7 +220,6 @@
 <script>
     $("#enter-id").slideUp();
 
-
     //Single date range pickers
     $(function() {
         $('.js-single-daterange').daterangepicker({
@@ -228,7 +227,6 @@
             showDropdowns: true
         });
     });
-
 
     $("#submit-id-button").click(function() {
         $(this).hide();
@@ -241,9 +239,6 @@
         $("#enter-id-button").removeAttr('disabled');
 
     });
-
-
-
 
     $('.next').click(function() {
         var nextId = $(this).parents('.tab-pane').next().attr("id");
@@ -267,8 +262,26 @@
         $('#myWizard a:first').tab('show')
     })
 
-
     $('#last').click(function() {
+        let applyData = {
+            'email':$('#email').val(),
+            'firstName': $('#name__first').val(),
+            'lastName': $('#name__last').val(),
+            'country': $('#country').val(),
+            'city': $('#info--city').val(),
+            'socialAccounts': {
+                'discord': $('#discord__handle').val(),
+                'telegram': $('#telegram__handle').val(),
+                'linkedin': $('#linkedin').val(),
+            },
+            'profession': $('#profession').val(),
+            'personalWebsite': $('#personal__website').val(),
+            'resume': $('#resume').val(),
+            'generalDlt': $('#generalDlt').val(),
+            'generalIota': $('#generalIota').val(),
+            'rateIota': $('#rateIota').val()
+        }
+        console.log('applyData:', applyData);
         $('#lastli').addClass('success');
     });
 </script>
