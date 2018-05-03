@@ -7,3 +7,6 @@ node_modules
 
 # Env Files
 .env
+
+# Config Files
+ien-alpha.json

@@ -631,7 +631,7 @@
             'email':$('#email').val(),
             'firstName': $('#name__first').val(),
             'lastName': $('#name__last').val(),
-            'country': $('#country').val(),
+            'country': $("#country :selected").text(),
             'city': $('#info--city').val(),
             'socialAccounts': {
                 'discord': $('#discord__handle').val(),
@@ -651,34 +651,23 @@
             'acknowledgement': $('#acknowledgement').val()
         }
         // console.log('applyData:', new Date().toString(), applyData);
-        var values = [
-            [
-                [new Date().toISOString(), applyData['firstName'], applyData['country'], applyData['city'], applyData['interestedAreasIn'], '', applyData['socialAccounts']['discord'], applyData['profession'], applyData['email'], applyData['socialAccounts']['linkedin'], applyData['whyIEN'], applyData['lastName'], applyData['resume'], applyData['acknowledgement'], applyData['socialAccounts']['telegram'], applyData['generalIota'], applyData['generalDlt'], applyData['perWeek'], applyData['hours']]
-            ],
-        ];
-        var body = {
-            values: values
-        };
-        gapi.client.init({
-            'apiKey': 'AIzaSyBNznyn08Hp7R7V679waZ6XNxw30N-jaQk',
-            'discoveryDocs': ['https://sheets.googleapis.com/$discovery/rest'],
-            'clientId': '545872319542-jrb91a9vgu83o43cgrf7j7ddapne00k1.apps.googleusercontent.com',
-            'scope': 'https://www.googleapis.com/auth/spreadsheets'
-        }).then(function() {
-            // 3. Initialize and make the API request.
-            return gapi.client.sheets.spreadsheets.values.append({
-                spreadsheetId: '1YEFwEdpBVfYGwwDN-BivqMAy-prhrA3zZ36iatgKv8A',
-                range: "Sheet1!A1:W1",
-                valueInputOption: "USER_ENTERED",
-                resource: body
-            });
-        }).then(function(response) {
-            var result = response.result;
-            console.log(`${result.updates.updatedCells} cells appended.`)
-            $('#lastli').addClass('success');
-        }, function(reason) {
-            console.log('reason:', reason);
-            console.log('Error: ' + reason.result.error.message);
+        var values = [new Date().toISOString(), applyData['firstName'], applyData['country'], applyData['city'], applyData['interestedAreasIn'], '', applyData['socialAccounts']['discord'], applyData['profession'], applyData['email'], applyData['socialAccounts']['linkedin'], applyData['personalWebsite'], applyData['whyIEN'], applyData['lastName'], applyData['resume'], applyData['acknowledgement'], applyData['socialAccounts']['telegram'], applyData['generalIota'], applyData['generalDlt'], '', applyData['perWeek'], '', '', applyData['hours']];
+
+        $.ajax({
+            type: 'POST',
+            url: '/apply',
+            dataType: 'json',
+            data: {
+                values: values
+            },
+            cache: false,
+            success: function (result) {
+                if (result.status == 200) {
+                    $('#lastli').addClass('success');
+                } else {
+                    console.log(result.message);
+                }
+            }
         });
 
 
