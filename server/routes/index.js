@@ -77,7 +77,7 @@ router.post('/apply', function(req, res, next) {
         } else {
             //Google Sheets API
             let spreadsheetId = '1YEFwEdpBVfYGwwDN-BivqMAy-prhrA3zZ36iatgKv8A';
-            let sheetName = 'Form responses 1!A1:W1'
+            let sheetName = '\'Form responses 1\'!A1'
             let sheets = google.sheets('v4');
             sheets.spreadsheets.values.append({
                 auth: jwtClient,
