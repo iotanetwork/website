@@ -653,7 +653,7 @@
         // console.log('applyData:', new Date().toString(), applyData);
         var values = [
             [
-                [new Date().toString(), applyData['firstName'], applyData['country'], applyData['city'], applyData['interestedAreasIn'], '', applyData['socialAccounts']['discord'], applyData['profession'], applyData['email'], applyData['socialAccounts']['linkedin'], applyData['whyIEN'], applyData['lastName'], applyData['resume'], applyData['acknowledgement'], applyData['socialAccounts']['telegram'], applyData['generalIota'], applyData['generalDlt'], applyData['perWeek'], applyData['hours']]
+                [new Date().toISOString(), applyData['firstName'], applyData['country'], applyData['city'], applyData['interestedAreasIn'], '', applyData['socialAccounts']['discord'], applyData['profession'], applyData['email'], applyData['socialAccounts']['linkedin'], applyData['whyIEN'], applyData['lastName'], applyData['resume'], applyData['acknowledgement'], applyData['socialAccounts']['telegram'], applyData['generalIota'], applyData['generalDlt'], applyData['perWeek'], applyData['hours']]
             ],
         ];
         var body = {
@@ -661,9 +661,9 @@
         };
         gapi.client.init({
             'apiKey': 'AIzaSyBNznyn08Hp7R7V679waZ6XNxw30N-jaQk',
-            // 'discoveryDocs': ['https://people.googleapis.com/$discovery/rest'],
+            'discoveryDocs': ['https://people.googleapis.com/$discovery/rest'],
             'clientId': '545872319542-jrb91a9vgu83o43cgrf7j7ddapne00k1.apps.googleusercontent.com'
-            // 'scope': 'openid',
+            'scope': 'https://www.googleapis.com/auth/spreadsheets',
         }).then(function() {
             // 3. Initialize and make the API request.
             return gapi.client.sheets.spreadsheets.values.append({
@@ -680,6 +680,7 @@
             console.log('reason:', reason);
             console.log('Error: ' + reason.result.error.message);
         });
+
 
     });
 
