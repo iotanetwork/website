@@ -543,6 +543,7 @@
 
 <script>
     $("#enter-id").slideUp();
+    $('#last').hide();
 
     //Single date range pickers
     $(function() {
@@ -590,6 +591,15 @@
     $('.first').click(function() {
         $('#myWizard a:first').tab('show')
     })
+
+    $("#acknowledgement").on('change keyup paste input', function(){
+        if($("#acknowledgement").val().length > 0) {
+            $('#last').show();
+        }
+        else {
+            $('#last').hide();
+        }
+    });
 
     $('#last').click(function() {
         let checkArea1 = document.getElementById("area1");
