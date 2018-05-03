@@ -660,11 +660,9 @@
             values: values
         };
         gapi.client.init({
-            'apiKey': 'YOUR_API_KEY',
-            // Your API key will be automatically added to the Discovery Document URLs.
+            'apiKey': 'AIzaSyBNznyn08Hp7R7V679waZ6XNxw30N-jaQk',
             // 'discoveryDocs': ['https://people.googleapis.com/$discovery/rest'],
-            // clientId and scope are optional if auth is not required.
-            'clientId': 'YOUR_WEB_CLIENT_ID.apps.googleusercontent.com',
+            'clientId': '545872319542-jrb91a9vgu83o43cgrf7j7ddapne00k1.apps.googleusercontent.com',
             'scope': 'profile',
         }).then(function() {
             // 3. Initialize and make the API request.
@@ -679,6 +677,7 @@
             console.log(`${result.updates.updatedCells} cells appended.`)
             $('#lastli').addClass('success');
         }, function(reason) {
+            console.log('reason:', reason);
             console.log('Error: ' + reason.result.error.message);
         });
 
