@@ -107,4 +107,8 @@ router.post('/apply', function(req, res, next) {
     });
 });
 
+router.get('/faq', function(req, res, next) {
+    res.render('pages/faq', {title: 'IOTA Evangelist Network | IEN | FAQ'});
+});
+
 module.exports = router;
