@@ -1,5 +1,5 @@
-'use strict';
-module.exports = function(sequelize, DataTypes) {
+'use strict'
+module.exports = function (sequelize, DataTypes) {
   var member = sequelize.define('member', {
     handle: DataTypes.STRING,
     firstName: DataTypes.STRING,
@@ -16,10 +16,10 @@ module.exports = function(sequelize, DataTypes) {
     detail: DataTypes.STRING
   }, {
     classMethods: {
-      associate: function(models) {
+      associate: function (models) {
         // associations can be defined here
       }
     }
-  });
-  return member;
-};
+  })
+  return member
+}

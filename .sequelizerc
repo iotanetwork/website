@@ -1,6 +1,6 @@
 var path = require('path')
-var config = require('./config');
-var environment = 'development';
+var config = require('./config')
+var environment = 'development'
 
 module.exports = {
   'config': path.resolve('./server/config.js'),
