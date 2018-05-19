@@ -1,5 +1,5 @@
-var helpers = require('./server/helpers');
+// var helpers = require('./server/helpers')
 
-console.log('=============> Test Starts <=============');
+console.log('=============> Test Starts <=============')
 
-console.log('==============> Test Ends <==============');
+console.log('==============> Test Ends <==============')
