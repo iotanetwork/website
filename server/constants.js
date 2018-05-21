@@ -37,6 +37,10 @@ exports.socialAccounts = function() {
         'discord': {
             'iconClass': 'fa-discord',
             'baseUrl': 'https://discord.gg/csc7Dak'
+        },
+        'telegram': {
+            'iconClass': 'fa-telegram',
+            'baseUrl': 'https://web.telegram.org/#/im?p=@'
         }
     };
     return socialAccountValues;
