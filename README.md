@@ -10,8 +10,10 @@
 
 ```
 psql -U postgres
-(psql#) ien < https://s3.amazonaws.com/iota-ien/ien_dump (if you have trouble with this then ask in the telegram app)
+(psql#) ien < https://s3.amazonaws.com/iota-ien/ien_dump
 ```
+
+(if you have trouble with the last step then ask in the telegram app)
 
 - Open pgAdmin, browse to the tables under ien db, now you should see 2 tables.
 - Right-click on member table and choose "Show data/rows", you should see 94 members.
