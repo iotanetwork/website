@@ -40,15 +40,14 @@
     <script>
         function filter() {
             // Declare variables
-            var input, filter, members, name, i;
-            input = document.getElementById('searchInput');
-            filter = input.value.toUpperCase();
+            var filter, members, name, i;
+            filter = document.getElementById('searchInput').value;
             members = document.getElementsByClassName('at-column');
         
             // Loop through all members, and hide those who don't match the search query
             for (i = 0; i < members.length; i++) {
                 name = members[i].getElementsByClassName('at-user__name')[0];
-                if (name.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                if (name.innerHTML.indexOf(filter) > -1) {
                     members[i].style.display = "";
                 } else {
                     members[i].style.display = "none";
