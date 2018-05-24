@@ -3,21 +3,8 @@
 ## DB Setup
 
 - Download and install Postgres 10
-- Use ani as password
-- Open pgAdmin and create database with name "ien"
-- Close pgAdmin and open your terminal/cmd
-- cd to the folder where psql is installed on your machine OR setup a path to psql
-
-```
-psql -U postgres
-(psql#) ien < https://s3.amazonaws.com/iota-ien/ien_dump
-```
-
-(if you have trouble with the last step then ask in the telegram app)
-
-- Open pgAdmin, browse to the tables under ien db, now you should see 2 tables.
-- Right-click on member table and choose "Show data/rows", you should see 94 members.
-- Now your db is ready.
+- Set a password of your choice. You can also leave it blank.
+- Open pgAdmin (if you need a UI) or open psql on terminal and create database with name "ien" `create database ien`
 
 ## Project Setup
 
@@ -31,7 +18,20 @@ npm install
 npm run migrate
 ```
 
-- Create environment file inside the project (.env) with the content NODE_ENV=development
+- Create environment file inside the project (.env) with the content. These are optional and if not provided, the setup will still work.
+
+```
+PORT=3000
+NODE_ENV=development
+DB_PASSWORD=password
+```
+
+You can now populate the db yourself or alternatively, here's a snapshot of the db that you can use:
+```
+psql -U postgres
+(psql#) ien < https://s3.amazonaws.com/iota-ien/ien_dump
+```
+(if you have trouble with the last step then ask in the telegram group for help)
 
 ## Run the website 
 
@@ -40,4 +40,4 @@ npm run migrate
 (Alternatively you may install nodemon globally with `npm i -g nodemon`, you don't have to restart the server every time you write some code and want to test it)
 
 - Go to your favorite browser and open http://localhost:3000/ to view our website in action.
-- Check for issues on github and have fun!:)
+- Check for [issues on github](https://github.com/iotanetwork/website/issues) and have fun!:)
