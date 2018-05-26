@@ -581,6 +581,12 @@ var map = AmCharts.makeChart("chartdiv", {
                 "title": "Zurich",
                 "latitude": 47.3768866,
                 "longitude": 8.541694
+            }, {
+                "zoomLevel": 5,
+                "scale": 0.5,
+                "title": "Manilla",
+                "latitude": 14.5995,
+                "longitude": 120.9842
             }
         ]
     }
