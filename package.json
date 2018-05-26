@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node ./server/bin/www",
     "migrate": "node_modules/.bin/sequelize db:migrate",
-    "test": "mocha"
+    "test": "mocha ./server/views/pages/test"
   },
   "dependencies": {
     "aws-sdk": "^2.7.20",

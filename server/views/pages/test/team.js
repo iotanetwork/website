@@ -1,4 +1,4 @@
-var helpers = require('../server/helpers');
+var helpers = require('../../../helpers');
 var should = require('chai').should();
 
 describe('Helpers', function() {
