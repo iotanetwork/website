@@ -61,10 +61,6 @@ router.get('/team', function(req, res, next) {
     });
 });
 
-router.get('/404', function(req, res, next) {
-    res.render('pages/error-pages/not_found', {title: 'IOTA Evangelist Netowrk | IEN | 404 | Not Found'});
-});
-
 router.post('/apply', function(req, res, next) {
     // console.log('body:', req.body.values);
     // configure a JWT auth client
@@ -109,6 +105,18 @@ router.post('/apply', function(req, res, next) {
 
 router.get('/faq', function(req, res, next) {
     res.render('pages/faq', {title: 'IOTA Evangelist Network | IEN | FAQ'});
+});
+
+router.get('/resources', function(req, res, next) {
+    res.render('pages/resources', {title: 'IOTA Evangelist Network | Resources'});
+});
+
+router.get('/404', function(req, res, next) {
+    res.render('pages/error-pages/not_found', {title: 'IOTA Evangelist Netowrk | IEN | 404 | Not Found'});
+});
+
+router.get('*', function(req, res, next) {
+    res.render('pages/error-pages/not_found', {title: 'IOTA Evangelist Netowrk | IEN | 404 | Not Found'});
 });
 
 module.exports = router;

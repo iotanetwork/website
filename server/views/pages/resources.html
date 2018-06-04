@@ -1,0 +1,80 @@
+{% extends '../layout.html' %} {% block title %}{% endblock %} {% block content %}
+
+<link href="assets/css/apply.css" rel="stylesheet" type="text/css">
+<link href="assets/css/resources.css" rel="stylesheet" type="text/css" media="all" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"></script>
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" type="text/css" media="all" />
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://isotope.metafizzy.co/isotope.pkgd.min.js"></script>
+
+<div class="resources-div">
+    <div class="portfolio-title">
+        <div class="section-title">
+            <h1>Resources</h1>
+            <div class="separator"></div>
+            <p>We have gathered some of the best resources for your learning and usage purposes!</p>
+        </div>
+    </div>
+
+    <div id="filters" class="portfolio-filters">
+        <ul class="list-inline">
+            <li><a id="all" href="#" data-filter="*"><h5>All</h5></a></li>
+            <!-- <li><a href="#" data-filter=".video"><h5>Video</h5></a></li> -->
+            <!-- <li><a href="#" data-filter=".article"><h5>Article</h5></a></li> -->
+            <li><a href="#" data-filter=".tutorial"><h5>Tutorial</h5></a></li>
+            <!-- <li><a href="#" data-filter=".course"><h5>Course</h5></a></li> -->
+            <!-- <li><a href="#" data-filter=".talk"><h5>Talk</h5></a></li> -->
+        </ul>
+    </div>
+
+    <div id="Portfolio" class="portfolio" style="display:none">
+
+        <div class="portfolio-item tutorial">
+            <div class="portfolio-image">
+                <img src="https://i.ytimg.com/vi/MsaPA3U4ung/maxresdefault.jpg" alt="image" />
+            </div>
+            <a href="https://www.youtube.com/watch?v=MsaPA3U4ung&list=PLmL13yqb6OxdIf6CQMHf7hUcDZBbxHyza" target="_blank">
+                <div class="project-overlay">
+                    <div class="project-info">
+                        <i class="fa fa-eye"></i>
+                        <h3 class="project-name">IOTA Tutorials</h3>
+                        <p>Playlist of IOTA Tutorials - Robert Lie</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+    </div>
+
+    <div id="initial-message-div" class="message-fiv">
+        <div class="portfolio-title">
+            <div class="section-title">
+                <p>Select one of the categories to view related resources!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function() {
+        var $container = $('#Portfolio');
+
+        $container.isotope({
+            itemSelector: '.portfolio-item',
+            layoutMode: 'fitRows',
+        });
+
+        $('#filters').on('click', 'a', function() {
+            $('#initial-message-div').hide();
+            $('#Portfolio').show();
+            var filterValue = $(this).attr('data-filter');
+            $('#filters a').removeClass('active');
+            $(this).addClass('active');
+            $container.isotope({
+                filter: filterValue
+            });
+        });
+    });
+</script>
+
+{% endblock %}

@@ -1,0 +1,149 @@
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,700);
+* {
+  box-sizing: border-box;
+}
+
+body {
+  /*font-family: 'Open Sans', 'sans-serif';*/
+  margin: 0;
+}
+
+.section-title {
+  text-align: center;
+  max-width: 600px;
+  margin: 2rem auto 2rem;
+}
+.section-title h1 {
+  text-transform: uppercase;
+  font-size: 3rem;
+  line-height: 4rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin: 0 0 .5rem;
+}
+.section-title .separator {
+  width: 160px;
+  border-bottom: 2px solid #999;
+  margin: 0 auto 2rem;
+}
+.section-title p {
+  color: #999;
+  margin: 0;
+}
+
+.list-inline {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  *zoom: 1;
+}
+.list-inline li {
+  margin: 0;
+  padding: 0 5px;
+  display: inline-block;
+}
+.list-inline li a {
+  color: #111;
+  text-decoration: none;
+  text-transform: uppercase;
+  display: inline-block;
+  background-color: #e7e7e7;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+.list-inline li a h5 {
+  font-size: .75rem;
+  line-height: 1rem;
+  font-weight: 600;
+  margin: 0;
+}
+.list-inline li a.active, .list-inline li a:hover {
+  background-color: #111;
+  color: #fff;
+}
+
+.portfolio-filters {
+  text-align: center;
+  margin: 4rem 0 3rem;
+}
+
+.portfolio {
+  width: 100%;
+  margin: 4rem 0px 7rem;
+}
+
+.portfolio-item {
+  float: left;
+  width: 25%;
+  position: relative;
+}
+.portfolio-item .portfolio-image {
+  overflow: hidden;
+  display: block;
+  position: relative;
+}
+.portfolio-item .portfolio-image > img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.portfolio-item > a {
+  display: block;
+}
+.portfolio-item > a .project-overlay {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(10, 10, 10, 0.9);
+  color: #fff;
+  text-align: center;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+.portfolio-item > a .project-overlay .project-info {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  margin-top: 0px;
+  opacity: 0;
+  transition: all 0.3s ease 0.3s;
+}
+.portfolio-item > a .project-overlay .project-info i.fa {
+  margin-bottom: 1rem;
+  background-color: #fff;
+  font-size: 22px;
+  line-height: 48px;
+  width: 48px;
+  height: 48px;
+  color: #000;
+  border-radius: 32px;
+}
+.portfolio-item > a .project-overlay .project-info .project-name {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  margin: 0 0 .5rem;
+}
+.portfolio-item > a .project-overlay .project-info p {
+  color: #999;
+  font-size: .85rem;
+  margin: 0 1rem 1rem;
+}
+.portfolio-item > a:hover .project-overlay {
+  opacity: 1;
+  transition: all 0.2s ease;
+}
+.portfolio-item > a:hover .project-overlay .project-info {
+  margin-top: -60px;
+  opacity: 1;
+}
+
+.resources-div {
+    position: relative;
+    top: 5rem;
+}
