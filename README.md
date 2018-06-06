@@ -29,11 +29,11 @@ DB_PASSWORD=password
 You can now populate the db yourself or alternatively, here's a snapshot of the db that you can use:
 ```
 psql -U postgres
-(psql#) ien < https://s3.amazonaws.com/iota-ien/ien_dump
+(psql#) ien < https://s3.amazonaws.com/iota-ien/ien_dump.sql
 ```
 (if you have trouble with the last step then ask in the telegram group for help)
 
-## Run the website 
+## Run the website
 
 `npm start`
 
