@@ -1,10 +1,22 @@
 {% extends '../layout.html' %} {% block title %}{% endblock %} {% block content %}
 
+<link href="assets/css/apply.css" rel="stylesheet" type="text/css">
 <style>
     .c-faq__answer {
         position: absolute;
         opacity: 0;
         z-index: -1;
+        background: #fff;
+    }
+
+    html, body {
+        /*font-family: "Open Sans", sans-serif;*/
+        background: none;
+        /*color: #333333;*/
+        /*font-size: 16px;*/
+        /*font-weight: 400;*/
+        /*min-height: 100%;*/
+        /*height: 100%; */
     }
 
     /*body {
@@ -175,18 +187,55 @@
 <br/><br/><br/><br/><br/><br/>
 <div class="container">
     <h1 class="section__headline">FAQs</h1>
-    <h2 class="c-faqs__headline">Initial Setup</h2>
+    <h2 class="c-faqs__headline">Generic</h2>
     <ul class="c-faqs">
         <li class="c-faq c-faq--active">
             <span class="c-faq__title">Why IOTA Evangelist Network?</span>
-            <div class="c-faq__answer"><a href="https://en.wikipedia.org/wiki/Technology_evangelist" target="_blank">Evangelism</a> is a jargon in the technology space to build up critical mass for a given product. This is exactly what we are doing. Lots of top tech companies has roles like "tech evangelist" or "product evangelist". IEN is backed by the Foundation and we work side-by-side with a few of the Foundation members.</div>
+            <div class="c-faq__answer">
+                The Iota Evangelist Network is a global community of people who are:
+                <ul style="list-style-type:disc">
+                    <li>Passionate about Iota and its potential</li>
+                    <li>Actively promoting Iota through any of these means: education, tech development, media, company adoption, collaboration and research.</li>
+                </ul>
+            </div>
         </li>
         <li class="c-faq">
-            <span class="c-faq__title">Question 2?</span>
-            <div class="c-faq__answer">Answer.</div>
+            <span class="c-faq__title">Why "Evangelist"?</span>
+            <div class="c-faq__answer"><a href-"https://en.wikipedia.org/wiki/Technology_evangelist" target="_blank">Evangelism</a> is a jargon in the technology space to build up critical mass for a given product. This is exactly what we are doing. Lots of top tech companies have roles such as "tech evangelist" or "product evangelist".
+            </div>
+        </li>
+        <li class="c-faq">
+            <span class="c-faq__title">What is the purpose of the IEN?</span>
+            <div class="c-faq__answer">The purpose of the IEN is to:<br />Collaborate and network with a diverse community of Iota enthusiasts from around the world, in order to further help and support each other in the promotion of Iota adoption and development.</div>
+        </li>
+        <li class="c-faq">
+            <span class="c-faq__title">What is the relationship between the IEN and the Iota Foundation?</span>
+            <div class="c-faq__answer">The IEN and the Iota Foundation are two separate entities. However, the IEN is morally supported by the Iota Foundation and works side-by-side with some of the Foundation members.</div>
+        </li>
+        <li class="c-faq">
+            <span class="c-faq__title">What makes a candidate IEN material?</span>
+            <div class="c-faq__answer">
+                <p>Candidates should already have something that can bring to the IOTA project: either dev skills, startups, connections, or ability to speak about IOTA in their respective countries. IEN can accelerate the process the candidate is already doing in this way.</p>
+                <p>If candidates are weak on IOTA, then should be strong in the biz, dev and connections side. Notable locations IEN is not active yet is excellent, as well as important industries.</p>
+                <p>It's important if a candidate is either helping by developing (the tech), helping by operating fullnodes, helping by organizing Events/Meetups, writing articles about any IOTA related topic, educating in general, solving specific use case or whatever, that only he can do. Being excited alone isn't enough.</p>
+                <p>We're not simply cheerleaders, If we ask a prospective "so what do you think of IOTA's ternary structure?" if they go "it's great! yay!" they are less attractive than someone who goes "I really like IOTA's promise to solve problems and give new opportunities in deploying IoT devices, but ternary seems a little too forward reaching at this time...".</p>
+                <p>They show, or can show, over a couple of weeks or months that they are very active in promoting and speaking out on IOTA for specific reasons that show they grasp the tech. So not crypto bro empty enthusiasm, but enthusiasm for IOTA's technical promise, to grasp that and be vocal about that and show that record.</p>
+            </div>
         </li>
     </ul>
-    <!-- /end c-faqs -->
+    <h2 class="c-faqs__headline">IEN Membership</h2>
+    <ul class="c-faqs">
+        <li class="c-faq">
+        <span class="c-faq__title">What makes a candidate IEN material?</span>
+        <div class="c-faq__answer">
+            <p>Candidates should already have something that can bring to the IOTA project: either dev skills, startups, connections, or ability to speak about IOTA in their respective countries. IEN can accelerate the process the candidate is already doing in this way.</p>
+            <p>If candidates are weak on IOTA, then should be strong in the biz, dev and connections side. Notable locations IEN is not active yet is excellent, as well as important industries.</p>
+            <p>It's important if a candidate is either helping by developing (the tech), helping by operating fullnodes, helping by organizing Events/Meetups, writing articles about any IOTA related topic, educating in general, solving specific use case or whatever, that only he can do. Being excited alone isn't enough.</p>
+            <p>We're not simply cheerleaders, If we ask a prospective "so what do you think of IOTA's ternary structure?" if they go "it's great! yay!" they are less attractive than someone who goes "I really like IOTA's promise to solve problems and give new opportunities in deploying IoT devices, but ternary seems a little too forward reaching at this time...".</p>
+            <p>They show, or can show, over a couple of weeks or months that they are very active in promoting and speaking out on IOTA for specific reasons that show they grasp the tech. So not crypto bro empty enthusiasm, but enthusiasm for IOTA's technical promise, to grasp that and be vocal about that and show that record.</p>
+        </div>
+    </li>
+    </ul>
 
     <!-- <span class="c-note">Source: <a href="http://anirudha.org/">anirudha.org</a></span> -->
 </div>
