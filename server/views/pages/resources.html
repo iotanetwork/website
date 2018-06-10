@@ -28,21 +28,22 @@
     </div>
 
     <div id="Portfolio" class="portfolio" style="display:none">
-
-        <div class="portfolio-item tutorial">
-            <div class="portfolio-image">
-                <img src="https://i.ytimg.com/vi/MsaPA3U4ung/maxresdefault.jpg" alt="image" />
-            </div>
-            <a href="https://www.youtube.com/watch?v=MsaPA3U4ung&list=PLmL13yqb6OxdIf6CQMHf7hUcDZBbxHyza" target="_blank">
-                <div class="project-overlay">
-                    <div class="project-info">
-                        <i class="fa fa-eye"></i>
-                        <h3 class="project-name">IOTA Tutorials</h3>
-                        <p>Playlist of IOTA Tutorials - Robert Lie</p>
-                    </div>
+        {% for resourceItem in resources %}
+            <div class="portfolio-item {{resourceItem['type']}}">
+                <div class="portfolio-image">
+                    <img src="{{resourceItem['icon']}}" alt="{{resourceItem['name']}}" />
                 </div>
-            </a>
-        </div>
+                <a href="{{resourceItem['url']}}" target="_blank">
+                    <div class="project-overlay">
+                        <div class="project-info">
+                            <!-- <i class="fa fa-eye"></i> -->
+                            <h3 class="project-name">{{resourceItem['author']}}</h3>
+                            <p>{{resourceItem['name']}}</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        {% endfor %}
 
     </div>
 

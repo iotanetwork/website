@@ -108,7 +108,11 @@ router.get('/faq', function(req, res, next) {
 });
 
 router.get('/resources', function(req, res, next) {
-    res.render('pages/resources', {title: 'IOTA Evangelist Network | Resources'});
+    var resources = constants.resources();
+    res.render('pages/resources', {
+        title: 'IOTA Evangelist Network | Resources',
+        resources: resources
+    });
 });
 
 router.get('/404', function(req, res, next) {
