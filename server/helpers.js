@@ -5,6 +5,7 @@
  *
  */
 var bcrypt = require('bcryptjs');
+var jwt = require('jsonwebtoken');
 var models = require('./models/index');
 
 exports.createMember = function(memberData, cb) {
@@ -141,3 +142,24 @@ exports.memberLoginCheck = function(requestData, cb) {
 
     });
 };
+
+exports.generateToken = function(userData) {
+    let token = jwt.sign(userData, process.env.SECRETKEY || 'secretKey', {
+        expiresIn: process.env.AUTH_EXPIRE_TIME || '7d' // in seconds or a string describing a time span in the format of zeit/ms (https://github.com/zeit/ms)
+    });
+    console.log('token:', token);
+    // return Promise.resolve(token);
+    return token;
+}
+
+exports.validateToken = function(token) {
+    return new Promise((resolve, reject) => {
+        jwt.verify(token, process.env.SECRETKEY || 'secretKey', (err, decoded) => {
+            if (err) {
+                reject(err);
+                return;
+            }
+            resolve(decoded);
+        });
+    });
+}

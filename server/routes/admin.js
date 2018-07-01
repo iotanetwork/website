@@ -10,65 +10,116 @@ var privatekey = require("../../ien-alpha.json");
 // Routes
 
 router.get('/', function(req, res, next) {
-    res.render('admin/pages/home', {
-        title: 'IEN Admin'
-    });
+    helpers.validateToken(req.cookies.Authorization)
+    .then((tokenAuth) => {
+        if (tokenAuth.id != 'undefined') {
+            res.render('admin/pages/home', {
+                title: 'IEN Admin'
+            });
+        }
+    })
+    .catch((err) => {
+        console.log('rejected', err);
+        res.redirect('/admin/login')
+    })
 });
 
 router.get('/members', function(req, res, next) {
-    var socialAccounts = constants.socialAccounts();
-    helpers.getAllMembers(function(err, teamMembers) {
-        if (err) {
-            teamMembers = [];
-        }
-        if (teamMembers.length > 0) {
-            utils.sortTeamMembersByPicture(teamMembers, function(err, teamMembersSorted) {
-                res.render('admin/pages/members', {
-                    title: 'IOTA Evangelist Network | IEN',
-                    teamMembers: teamMembersSorted,
-                    socialAccounts: socialAccounts
-                });
-            })
-        } else {
-            res.render('admin/pages/members', {
-                title: 'IEN Members',
-                teamMembers: teamMembers,
-                socialAccounts: socialAccounts
+    helpers.validateToken(req.cookies.Authorization)
+    .then((tokenAuth) => {
+        if (tokenAuth.id != 'undefined') {
+            var socialAccounts = constants.socialAccounts();
+            helpers.getAllMembers(function(err, teamMembers) {
+                if (err) {
+                    teamMembers = [];
+                }
+                if (teamMembers.length > 0) {
+                    utils.sortTeamMembersByPicture(teamMembers, function(err, teamMembersSorted) {
+                        res.render('admin/pages/members', {
+                            title: 'IOTA Evangelist Network | IEN',
+                            teamMembers: teamMembersSorted,
+                            socialAccounts: socialAccounts
+                        });
+                    })
+                } else {
+                    res.render('admin/pages/members', {
+                        title: 'IEN Members',
+                        teamMembers: teamMembers,
+                        socialAccounts: socialAccounts
+                    });
+                }
             });
         }
-    });
-
+    })
+    .catch((err) => {
+        console.log('rejected', err);
+        res.redirect('/admin/login')
+    })
 });
 
 router.get('/members/:memberId/edit', function(req, res, next) {
-    let socialAccounts = constants.socialAccounts();
-    helpers.getMemberById(req.params.memberId, socialAccounts, function(err, memberData) {
-        if(err) {
-            console.log('Error');
+
+    helpers.validateToken(req.cookies.Authorization)
+    .then((tokenAuth) => {
+        if (tokenAuth.id != 'undefined') {
+            let socialAccounts = constants.socialAccounts();
+            helpers.getMemberById(req.params.memberId, socialAccounts, function(err, memberData) {
+                if(err) {
+                    console.log('Error');
+                }
+                res.render('admin/pages/memberedit', {
+                    title: 'IEN Member Update',
+                    memberData: memberData
+                });
+            });
         }
-        res.render('admin/pages/memberedit', {
-            title: 'IEN Member Update',
-            memberData: memberData
-        });
-    });
+    })
+    .catch((err) => {
+        console.log('rejected', err);
+        res.redirect('/admin/login')
+    })
 });
 
 router.post('/members/:memberId/update', function(req, res, next) {
-    let redirectUrl = '/admin/members/'+req.params.memberId+'/edit';
-    // update member data
-    // console.log(req.body);
-    helpers.updateMember(req.params.memberId, req.body, function(err, success) {
-        res.redirect(redirectUrl);
-    });
+    helpers.validateToken(req.cookies.Authorization)
+    .then((tokenAuth) => {
+        if (tokenAuth.id != 'undefined') {
+            let redirectUrl = '/admin/members/'+req.params.memberId+'/edit';
+            // update member data
+            // console.log(req.body);
+            helpers.updateMember(req.params.memberId, req.body, function(err, success) {
+                res.redirect(redirectUrl);
+            });
+        }
+    })
+    .catch((err) => {
+        console.log('rejected', err);
+        res.redirect('/admin/login')
+    })
 });
 
 router.post('/members/:memberId/update/social', function(req, res, next) {
-    let redirectUrl = '/admin/members/'+req.params.memberId+'/edit';
-    // update member social data
-    // console.log(req.body);
-    helpers.updateMember(req.params.memberId, {'socialHandles': req.body}, function(err, success) {
-        res.redirect(redirectUrl);
-    });
+    helpers.validateToken(req.cookies.Authorization)
+    .then((tokenAuth) => {
+        if (tokenAuth.id != 'undefined') {
+            let tokenAuth = helpers.validateToken(req.cookies.Authorization)
+            if (tokenAuth.id === 'undefined') {
+                res.redirect('./login')
+            }
+            else {
+                let redirectUrl = '/admin/members/'+req.params.memberId+'/edit';
+                // update member social data
+                // console.log(req.body);
+                helpers.updateMember(req.params.memberId, {'socialHandles': req.body}, function(err, success) {
+                    res.redirect(redirectUrl);
+                });
+            }
+        }
+    })
+    .catch((err) => {
+        console.log('rejected', err);
+        res.redirect('/admin/login')
+    })
 });
 
 router.get('/login', function(req, res, next) {
@@ -78,13 +129,20 @@ router.get('/login', function(req, res, next) {
 });
 
 router.post('/login', function(req, res, next) {
-    console.log('data:', req.body);
+    // console.log('data:', req.body);
     helpers.memberLoginCheck(req.body, function(err, memberData) {
         if(err) {
             console.log('Error');
             res.redirect('/admin/login');
         }
         else {
+            // Set Authorisation header
+            let tokenGenerated = helpers.generateToken({
+                id: memberData.id,
+                handle: memberData.handle
+            })
+            console.log('tokenGenerated:', tokenGenerated);
+            res.cookie('Authorization', tokenGenerated, { maxAge: 900000000 });
             if(memberData.role == 1) {
                 res.redirect('/admin/');
             }
@@ -92,7 +150,7 @@ router.post('/login', function(req, res, next) {
                 res.redirect('/');
             }
         }
-    });
+    })
 });
 
 router.get('*', function(req, res, next) {
