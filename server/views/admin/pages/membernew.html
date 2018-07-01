@@ -1,0 +1,65 @@
+{% extends '../layout.html' %}
+
+{% block title %} {% endblock %}
+
+{% block content %}
+    <div class="content mt-3">
+        <div class="animated fadeIn">
+            <div class="row">
+                <div class="col-lg-6">
+                <div class="card">
+                    <form action="/admin/members/new" method="post" enctype="multipart/x-www-form-urlencoded" class="form-horizontal">
+                      <div class="card-header">
+                        <strong>Member </strong> New
+                      </div>
+                      <div class="card-body card-block">
+                      <!-- <div class="row form-group">
+                        <div class="col col-md-3"><label class=" form-control-label">Handle</label></div>
+                        <div class="col-12 col-md-9">
+                          <p class="form-control-static">{{ memberData.handle }}</p>
+                        </div>
+                      </div> -->
+                      <div class="row form-group">
+                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">First Name</label></div>
+                        <div class="col-12 col-md-9"><input type="text" id="firstName" name="firstName" placeholder="First" class="form-control" value="" required><small class="form-text text-muted">This is your first name</small></div>
+                      </div>
+                      <div class="row form-group">
+                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Middle Name</label></div>
+                        <div class="col-12 col-md-9"><input type="text" id="middleName" name="middleName" placeholder="Mid" class="form-control" value=""><small class="form-text text-muted">This is your middle name</small></div>
+                      </div>
+                      <div class="row form-group">
+                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Last Name</label></div>
+                        <div class="col-12 col-md-9"><input type="text" id="lastName" name="lastName" placeholder="Last" class="form-control" value="" required><small class="form-text text-muted">This is your last name</small></div>
+                      </div>
+                      <div class="row form-group">
+                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Handle</label></div>
+                        <div class="col-12 col-md-9"><input type="text" id="handle" name="handle" placeholder="handle" class="form-control" value="" required><small class="form-text text-muted">This is your unique username/handle</small></div>
+                      </div>
+                      <div class="row form-group">
+                        <div class="col col-md-3"><label for="email-input" class=" form-control-label">Email</label></div>
+                        <div class="col-12 col-md-9"><input type="email" id="email" name="email" placeholder="email@domain.tld" class="form-control" value="" required><small class="help-block form-text">Your most active email</small></div>
+                      </div>
+                      <div class="row form-group">
+                        <div class="col col-md-3"><label for="textarea-input" class=" form-control-label">Bio</label></div>
+                        <div class="col-12 col-md-9"><textarea name="detail" id="detail" rows="9" placeholder="You are you..." class="form-control"></textarea></div>
+                      </div>
+                      <div class="row form-group">
+                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Picture Link</label></div>
+                        <div class="col-12 col-md-9"><input type="text" id="picture" name="picture" placeholder="picture" class="form-control" value="https://i.imgur.com/pLzV5XF.png" required><small class="form-text text-muted">Please use a publicly viewable picture link</small></div>
+                      </div>
+                      <div class="row form-group">
+                        <div class="col col-md-3"><label for="email-input" class=" form-control-label">IEN Email</label></div>
+                        <div class="col-12 col-md-9"><input type="email" id="email-ien" name="ienEmail" placeholder="email@domain.tld" class="form-control" value=""><small class="help-block form-text">Your IEN domain email</small></div>
+                      </div>
+
+                      </div>
+                      <div class="card-footer">
+                        <input type="submit" class="btn btn-primary btn-sm" value="Create" />
+                      </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

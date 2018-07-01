@@ -122,6 +122,48 @@ router.post('/members/:memberId/update/social', function(req, res, next) {
     })
 });
 
+router.get('/members/new', function(req, res, next) {
+    helpers.validateToken(req.cookies.Authorization)
+    .then((tokenAuth) => {
+        if (tokenAuth.id != 'undefined') {
+            res.render('admin/pages/membernew', {
+                title: 'IEN New Member'
+            });
+        }
+    })
+    .catch((err) => {
+        console.log('rejected', err);
+        res.redirect('/admin/login')
+    })
+});
+
+router.post('/members/new', function(req, res, next) {
+    helpers.validateToken(req.cookies.Authorization)
+    .then((tokenAuth) => {
+        if (tokenAuth.id != 'undefined') {
+            // update member data
+            // console.log(req.body);
+            helpers.createOrUpdateMember(req.body, function(err, createdData) {
+                if(err) {
+                    res.redirect('/admin/members/new')
+                }
+                if(createdData.created) {
+                    let redirectUrl = '/admin/members/'+createdData.userData.id+'/edit';
+                    res.redirect(redirectUrl);
+                }
+                else {
+                    res.redirect('/admin/members/new')
+                }
+
+            });
+        }
+    })
+    .catch((err) => {
+        console.log('rejected', err);
+        res.redirect('/admin/login')
+    })
+});
+
 router.get('/login', function(req, res, next) {
     res.render('admin/pages/login', {
         title: 'IEN Login'

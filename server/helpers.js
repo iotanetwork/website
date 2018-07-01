@@ -63,38 +63,47 @@ exports.getMemberById = function(memberId, socialAccounts, cb) {
     });
 };
 
-exports.createOrUpdateMember = function(requestData) {
+exports.createOrUpdateMember = function(requestData, cb) {
     models.member.findOrCreate({
         where: {
             email: requestData['memberEmail']
         },
         defaults: {
             firstName: requestData['firstName'],
+            middleName: requestData['middleName'],
             lastName: requestData['lastName'],
             email: requestData['memberEmail'],
             handle: requestData['memberHandle'],
-            socialHandles: requestData['socialHandles'],
+            socialHandles: {},
             picture: requestData['picture'],
-            detail: requestData['detail']
+            detail: requestData['detail'],
+            ienEmail: requestData['ienEmail']
         }
     }).spread((user, created) => {
         if (created) {
-            // console.log('user:', user.get({plain: true}));
-            return;
+            console.log('user:', user.get({plain: true}));
+            // return;
+            cb(null, {
+                userData: user,
+                created: created
+            })
         } else {
             models.member.update({
                 firstName: requestData['firstName'],
+                middleName: requestData['middleName'],
                 lastName: requestData['lastName'],
                 handle: requestData['memberHandle'],
-                socialHandles: requestData['socialHandles'],
+                // socialHandles: requestData['socialHandles'],
                 picture: requestData['picture'],
-                detail: requestData['detail']
+                detail: requestData['detail'],
+                ienEmail: requestData['ienEmail']
             }, {
                 where: {
                     email: requestData['memberEmail']
                 }
             }).then((updatedMember) => {
-                return;
+                // return;
+                cb(null, updatedMember)
             });
         }
     })
