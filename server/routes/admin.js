@@ -71,6 +71,30 @@ router.post('/members/:memberId/update/social', function(req, res, next) {
     });
 });
 
+router.get('/login', function(req, res, next) {
+    res.render('admin/pages/login', {
+        title: 'IEN Login'
+    });
+});
+
+router.post('/login', function(req, res, next) {
+    console.log('data:', req.body);
+    helpers.memberLoginCheck(req.body, function(err, memberData) {
+        if(err) {
+            console.log('Error');
+            res.redirect('/admin/login');
+        }
+        else {
+            if(memberData.role == 1) {
+                res.redirect('/admin/');
+            }
+            else {
+                res.redirect('/');
+            }
+        }
+    });
+});
+
 router.get('*', function(req, res, next) {
     res.render('pages/error-pages/not_found', {title: 'IOTA Evangelist Netowrk | IEN | 404 | Not Found'});
 });

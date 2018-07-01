@@ -4,6 +4,7 @@
  * Write additional functions to be used in Project here.
  *
  */
+var bcrypt = require('bcryptjs');
 var models = require('./models/index');
 
 exports.createMember = function(memberData, cb) {
@@ -107,3 +108,36 @@ exports.updateMember = function(memberId, requestData, cb) {
         cb(null, true)
     });
 }
+
+exports.memberLoginCheck = function(requestData, cb) {
+    models.member.findOne({
+        where: {
+            email: requestData.email
+        }
+    }).then(result => {
+        if(result) {
+            // Check Password
+            console.log(requestData.password);
+            console.log(result.password);
+            const paswordResult = bcrypt.compareSync(requestData.password, result.password)
+            console.log('paswordResult:', paswordResult);
+            if(paswordResult) {
+                return result;
+            }
+            else {
+                return null;
+            }
+        }
+        else {
+            return null;
+        }
+    }).then(result => {
+        if(Object.keys(result).length>0) {
+            cb(null, result);
+        }
+        else {
+            cb('incorrect password')
+        }
+
+    });
+};
