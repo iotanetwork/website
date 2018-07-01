@@ -28,7 +28,7 @@
                                         <td>{{teamMember['firstName']}}</td>
                                         <td>{{teamMember['lastName']}}</td>
                                         <td>{{teamMember['email']}}</td>
-                                        <td>Edit {{teamMember['id']}}</td>
+                                        <td><a href="./members/{{teamMember['id']}}/edit"><span class="ti-pencil-alt"></span></a></td>
                                     </tr>
                                 {% endfor %}
                             </tbody>

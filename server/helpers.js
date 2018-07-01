@@ -29,6 +29,38 @@ exports.getAllMembers = function(cb) {
     });
 };
 
+exports.getMemberById = function(memberId, socialAccounts, cb) {
+    models.member.findOne({
+        where: {
+            id: memberId
+        }
+    }).then(result => {
+        result = result.get()
+        // console.log('result', result);
+        if(Object.keys(socialAccounts).length>0) {
+            Object.keys(socialAccounts).forEach(function(key) {
+                var val = socialAccounts[key];
+                if(!result.socialHandles[key]) {
+                    result.socialHandles[key] = '';
+                }
+            });
+        }
+        else {
+            // console.log(socialAccounts);
+            Object.keys(socialAccounts).forEach(function(key) {
+                var val = socialAccounts[key];
+                console.log(key, val);
+                result.socialHandles[key] = '';
+            });
+            // return result;
+        }
+        return result;
+    }).then(result => {
+        // console.log('in 2', result);
+        cb(null, result);
+    });
+};
+
 exports.createOrUpdateMember = function(requestData) {
     models.member.findOrCreate({
         where: {
@@ -64,4 +96,14 @@ exports.createOrUpdateMember = function(requestData) {
             });
         }
     })
+}
+
+exports.updateMember = function(memberId, requestData, cb) {
+    models.member.update(requestData, {
+        where: {
+            id: memberId
+        }
+    }).then((updatedMember) => {
+        cb(null, true)
+    });
 }
