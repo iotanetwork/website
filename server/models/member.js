@@ -1,4 +1,9 @@
 'use strict';
+
+// role
+// 0 -> user
+// 1 -> admin
+
 module.exports = function(sequelize, DataTypes) {
   var member = sequelize.define('member', {
     handle: DataTypes.STRING,
@@ -13,7 +18,9 @@ module.exports = function(sequelize, DataTypes) {
     picture: DataTypes.STRING,
     isActive: DataTypes.BOOLEAN,
     ienEmail: DataTypes.STRING,
-    detail: DataTypes.STRING
+    detail: DataTypes.STRING,
+    password: DataTypes.STRING,
+    role: DataTypes.INTEGER
   }, {
     classMethods: {
       associate: function(models) {

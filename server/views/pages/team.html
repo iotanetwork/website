@@ -17,13 +17,18 @@
                               <div class="at-user">
                                 <div class="at-user__avatar"><img src="{{teamMember['picture']}}" /></div>
                                 <div class="at-user__name">{{teamMember['firstName']}} {{teamMember['lastName']}}</div>
-                                <!-- <div class="at-user__title">{{teamMember['location']}}</div> -->
+                                <div class="at-user__title">{{teamMember['detail']}}</div>
                                 <ul class="at-social">
                                   {% for teamSocialHandleKey, teamSocialHandleValue in teamMember['socialHandles'] %}
                                   {% if teamSocialHandleKey and teamSocialHandleKey=='discord' %}
                                   <li class="at-social__item"><a href="{{socialAccounts[teamSocialHandleKey]['baseUrl']}} "><i class="fa {{socialAccounts[teamSocialHandleKey]['iconClass']}}" aria-hidden="true"> @{{teamSocialHandleValue}}</i></a></li>
                                   {% else %}
-                                  <li class="at-social__item"><a href="{{socialAccounts[teamSocialHandleKey]['baseUrl']}}{{teamSocialHandleValue}} "><i class="fa {{socialAccounts[teamSocialHandleKey]['iconClass']}}" aria-hidden="true"></i></a></li>
+                                  <li class="at-social__item">
+                                      {% if teamSocialHandleValue.length>0 %}
+                                        <!-- {{teamSocialHandleValue.length>0}} -->
+                                          <a href="{{socialAccounts[teamSocialHandleKey]['baseUrl']}}{{teamSocialHandleValue}} "><i class="fa {{socialAccounts[teamSocialHandleKey]['iconClass']}}" aria-hidden="true"></i></a>
+                                      {% endif %}
+                                  </li>
                                   {% endif %}
                                   {% endfor %}
                                 </ul>
@@ -43,7 +48,7 @@
             var filter, members, name, i;
             filter = document.getElementById('searchInput').value.toLowerCase().trim();
             members = document.getElementsByClassName('at-column');
-        
+
             // Loop through all members, and hide those who don't match the search query
             for (i = 0; i < members.length; i++) {
                 name = members[i].getElementsByClassName('at-user__name')[0];
@@ -57,5 +62,3 @@
     </script>
 
 {% endblock %}
-
-

@@ -9,6 +9,7 @@ var swig = require('swig');
 
 // *** routes *** //
 var routes = require('./routes/index.js');
+var adminRoutes = require('./routes/admin.js');
 
 // *** express instance *** //
 var app = express(),
@@ -42,6 +43,7 @@ app.use(express.static(path.join(__dirname, '../client')));
 
 
 // *** main routes *** //
+app.use('/admin', adminRoutes);
 app.use('/', routes);
 
 

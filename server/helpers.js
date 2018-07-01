@@ -4,6 +4,7 @@
  * Write additional functions to be used in Project here.
  *
  */
+var bcrypt = require('bcryptjs');
 var models = require('./models/index');
 
 exports.createMember = function(memberData, cb) {
@@ -26,6 +27,38 @@ exports.getAllMembers = function(cb) {
             teamMembers.push(result[i].dataValues);
         }
         cb(null, teamMembers)
+    });
+};
+
+exports.getMemberById = function(memberId, socialAccounts, cb) {
+    models.member.findOne({
+        where: {
+            id: memberId
+        }
+    }).then(result => {
+        result = result.get()
+        // console.log('result', result);
+        if(Object.keys(socialAccounts).length>0) {
+            Object.keys(socialAccounts).forEach(function(key) {
+                var val = socialAccounts[key];
+                if(!result.socialHandles[key]) {
+                    result.socialHandles[key] = '';
+                }
+            });
+        }
+        else {
+            // console.log(socialAccounts);
+            Object.keys(socialAccounts).forEach(function(key) {
+                var val = socialAccounts[key];
+                console.log(key, val);
+                result.socialHandles[key] = '';
+            });
+            // return result;
+        }
+        return result;
+    }).then(result => {
+        // console.log('in 2', result);
+        cb(null, result);
     });
 };
 
@@ -65,3 +98,46 @@ exports.createOrUpdateMember = function(requestData) {
         }
     })
 }
+
+exports.updateMember = function(memberId, requestData, cb) {
+    models.member.update(requestData, {
+        where: {
+            id: memberId
+        }
+    }).then((updatedMember) => {
+        cb(null, true)
+    });
+}
+
+exports.memberLoginCheck = function(requestData, cb) {
+    models.member.findOne({
+        where: {
+            email: requestData.email
+        }
+    }).then(result => {
+        if(result) {
+            // Check Password
+            console.log(requestData.password);
+            console.log(result.password);
+            const paswordResult = bcrypt.compareSync(requestData.password, result.password)
+            console.log('paswordResult:', paswordResult);
+            if(paswordResult) {
+                return result;
+            }
+            else {
+                return null;
+            }
+        }
+        else {
+            return null;
+        }
+    }).then(result => {
+        if(Object.keys(result).length>0) {
+            cb(null, result);
+        }
+        else {
+            cb('incorrect password')
+        }
+
+    });
+};
