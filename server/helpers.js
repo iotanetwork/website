@@ -77,7 +77,8 @@ exports.createOrUpdateMember = function(requestData, cb) {
             socialHandles: {},
             picture: requestData['picture'],
             detail: requestData['detail'],
-            ienEmail: requestData['ienEmail']
+            ienEmail: requestData['ienEmail'],
+            isActive: true
         }
     }).spread((user, created) => {
         if (created) {
