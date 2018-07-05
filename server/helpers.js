@@ -72,7 +72,7 @@ exports.createOrUpdateMember = function(requestData, cb) {
             firstName: requestData['firstName'],
             middleName: requestData['middleName'],
             lastName: requestData['lastName'],
-            email: requestData['memberEmail'],
+            email: requestData['email'],
             handle: requestData['memberHandle'],
             socialHandles: {},
             picture: requestData['picture'],
@@ -100,7 +100,7 @@ exports.createOrUpdateMember = function(requestData, cb) {
                 ienEmail: requestData['ienEmail']
             }, {
                 where: {
-                    email: requestData['memberEmail']
+                    email: requestData['email']
                 }
             }).then((updatedMember) => {
                 // return;
