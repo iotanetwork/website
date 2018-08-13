@@ -10,6 +10,8 @@
                 <div class="col-sm-12 col-md-12 col-lg-12">
                     <div class="cta-team-inner">
                         <h1 class="wow fadeInDown" data-wow-delay="0.1s">Our Awesome Team</h1>
+                        <h5>Total Members: {{ teamMembers.length }}</h5>
+                        <br />
                         <input type="text" id="searchInput" onkeyup="filter()" placeholder="Search for names..">
                         <div class="at-grid" data-column="4" data-wow-delay="0.2s">
                             {% for teamMember in teamMembers %}
@@ -20,7 +22,7 @@
                                 <div class="at-user__title">{{teamMember['detail']}}</div>
                                 <ul class="at-social">
                                   {% for teamSocialHandleKey, teamSocialHandleValue in teamMember['socialHandles'] %}
-                                  {% if teamSocialHandleKey and teamSocialHandleKey=='discord' %}
+                                  {% if teamSocialHandleKey and teamSocialHandleKey=='discord' and teamSocialHandleValue.length>0 %}
                                   <li class="at-social__item"><a href="{{socialAccounts[teamSocialHandleKey]['baseUrl']}} "><i class="fa {{socialAccounts[teamSocialHandleKey]['iconClass']}}" aria-hidden="true"> @{{teamSocialHandleValue}}</i></a></li>
                                   {% else %}
                                   <li class="at-social__item">
