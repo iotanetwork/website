@@ -115,6 +115,10 @@ router.get('/resources', function(req, res, next) {
     });
 });
 
+router.get('/gallery', function(req, res, next) {
+    res.render('pages/gallery', {title: 'Gallery for IOTA Evangelist Network | IEN'});
+});
+
 router.get('/404', function(req, res, next) {
     res.render('pages/error-pages/not_found', {title: 'IOTA Evangelist Netowrk | IEN | 404 | Not Found'});
 });
