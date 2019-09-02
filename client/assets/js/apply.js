@@ -37,7 +37,7 @@ $('.next').click(function() {
     }
     var nextId = $(this).parents('.tab-pane').next().attr("id");
     $('[href=#' + nextId + ']').tab('show');
-    return false;
+    return;
 })
 
 $('a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
