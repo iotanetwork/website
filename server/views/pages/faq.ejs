@@ -1,0 +1,254 @@
+<% layout('../layout') -%>
+
+    <link href="/static/assets/css/apply.css" rel="stylesheet" type="text/css">
+    <style>
+        .c-faq__answer {
+            position: absolute;
+            opacity: 0;
+            z-index: -1;
+            background: #fff;
+        }
+        
+        html,
+        body {
+            /*font-family: "Open Sans", sans-serif;*/
+            background: none;
+            /*color: #333333;*/
+            /*font-size: 16px;*/
+            /*font-weight: 400;*/
+            /*min-height: 100%;*/
+            /*height: 100%; */
+        }
+        /*body {
+      box-sizing: border-box;
+      font-family: "ABeeZee", sans-serif;
+      line-height: 1.48;
+      font-size: 16px;
+      color: #333;
+    }
+
+    body *,
+    body *::after,
+    body *::before {
+      box-sizing: inherit;
+    }*/
+        /*.container {
+      max-width: 1100px;
+      margin-left: auto;
+      margin-right: auto;
+    }*/
+        
+        .section__headline {
+            font-family: "Varela Round", sans-serif;
+            font-size: 62px;
+            font-weight: light;
+            color: #1e88e5;
+            padding-left: 15px;
+            padding-top: 30px;
+        }
+        
+        .c-faqs__headline {
+            font-family: "Varela Round", sans-serif;
+            text-align: left;
+            padding-left: 15px;
+            font-size: 1.5em;
+            margin-top: 1.5em;
+            font-weight: bold;
+        }
+        
+        .c-faqs {
+            margin: 15px 0;
+            padding: 0 15px;
+            border-top: 1px solid transparent;
+            border-bottom: 1px solid transparent;
+        }
+        
+        .c-faq {
+            font-family: "Varela Round", sans-serif;
+            list-style: none;
+            margin: 10px 0 5px;
+        }
+        
+        .c-faq__title {
+            cursor: pointer;
+            font-weight: 500;
+            background: white;
+            z-index: 10;
+            position: relative;
+            font-size: 1.1em;
+        }
+        
+        .c-faq__title:hover {
+            text-decoration: underline;
+        }
+        
+        .c-faq__title::after {
+            white-space: nowrap;
+            font-weight: 300;
+            padding-left: 5px;
+            opacity: 0;
+            -webkit-transform-origin: 11px;
+            transform-origin: 11px;
+            -webkit-transform: rotateZ(90deg);
+            transform: rotateZ(90deg);
+            display: none;
+            content: ">";
+        }
+        
+        .c-faq--active .c-faq__title {
+            color: #1e88e5;
+        }
+        
+        .c-faq--active .c-faq__title::after {
+            opacity: 1;
+            -webkit-transform: rotateZ(90deg);
+            transform: rotateZ(90deg);
+            display: inline-block;
+        }
+        
+        .c-faq__answer {
+            font-weight: normal;
+            margin-top: -10%;
+            transition: all 0.1s;
+            z-index: 1;
+            font-size: 0.9em;
+            color: #505050;
+        }
+        
+        .c-faq--active .c-faq__answer {
+            opacity: 1;
+            position: relative;
+            top: 0;
+            left: 0;
+            font-weight: 300;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            transition: all 0.2s;
+            border-radius: 3px;
+            border: 1px solid #f1f2f3;
+            border-top: 1px solid #1e88e5;
+            padding: 20px;
+        }
+        
+        @media (min-width: 780px) {
+            .c-faqs {
+                position: relative;
+                margin-left: auto;
+                margin-right: auto;
+                height: auto;
+            }
+            .c-faqs::before {
+                opacity: 0.2;
+            }
+            .c-faq {
+                margin-top: 15px;
+                margin-bottom: 15px;
+            }
+            .c-faq .c-faq__title {
+                width: 50%;
+                padding-right: 40px;
+                display: inline-block;
+            }
+            .c-faq .c-faq__title::after {
+                display: none;
+            }
+            .c-faq .c-faq__answer {
+                position: absolute;
+                top: 50%;
+                -webkit-transform: translateY(-50%);
+                transform: translateY(-50%);
+                left: 50%;
+                width: 50%;
+                border-left-color: #1e88e5;
+                border-top-color: #f1f2f3;
+            }
+        }
+        
+        .c-note {
+            font-size: 0.8em;
+            padding-left: 15px;
+            opacity: 0.5;
+            transition: opacity 0.2s ease-in-out;
+        }
+        
+        .c-note:hover {
+            opacity: 1;
+            transition: opacity 0.2s ease-in-out;
+        }
+        
+        .c-note a {
+            color: #1e88e5;
+        }
+    </style>
+
+    <br/><br/><br/><br/><br/><br/>
+    <div class="container">
+        <h1 class="section__headline">FAQs</h1>
+        <h2 class="c-faqs__headline">Generic</h2>
+        <ul class="c-faqs">
+            <li class="c-faq c-faq--active">
+                <span class="c-faq__title">Why IOTA Evangelist Network?</span>
+                <div class="c-faq__answer">
+                    The Iota Evangelist Network is a global community of people who are:
+                    <ul style="list-style-type:disc">
+                        <li>Passionate about Iota and its potential</li>
+                        <li>Actively promoting Iota through any of these means: education, tech development, media, company adoption, collaboration and research.</li>
+                    </ul>
+                </div>
+            </li>
+            <li class="c-faq">
+                <span class="c-faq__title">Why "Evangelist"?</span>
+                <div class="c-faq__answer"><a href- "https://en.wikipedia.org/wiki/Technology_evangelist" target="_blank">Evangelism</a> is a jargon in the technology space to build up critical mass for a given product. This is exactly what we are doing. Lots of top tech companies
+                    have roles such as "tech evangelist" or "product evangelist".
+                </div>
+            </li>
+            <li class="c-faq">
+                <span class="c-faq__title">What is the purpose of the IEN?</span>
+                <div class="c-faq__answer">The purpose of the IEN is to:<br />Collaborate and network with a diverse community of Iota enthusiasts from around the world, in order to further help and support each other in the promotion of Iota adoption and development.</div>
+            </li>
+            <li class="c-faq">
+                <span class="c-faq__title">What is the relationship between the IEN and the Iota Foundation?</span>
+                <div class="c-faq__answer">The IEN and the Iota Foundation are two separate entities. However, the IEN is morally supported by the Iota Foundation and works side-by-side with some of the Foundation members.</div>
+            </li>
+            <li class="c-faq">
+                <span class="c-faq__title">What makes a candidate IEN material?</span>
+                <div class="c-faq__answer">
+                    <p>Candidates should already have something that can bring to the IOTA project: either dev skills, startups, connections, or ability to speak about IOTA in their respective countries. IEN can accelerate the process the candidate is already
+                        doing in this way.</p>
+                    <p>If candidates are weak on IOTA, then should be strong in the biz, dev and connections side. Notable locations IEN is not active yet is excellent, as well as important industries.</p>
+                    <p>It's important if a candidate is either helping by developing (the tech), helping by operating fullnodes, helping by organizing Events/Meetups, writing articles about any IOTA related topic, educating in general, solving specific use
+                        case or whatever, that only he can do. Being excited alone isn't enough.</p>
+                    <p>We're not simply cheerleaders, If we ask a prospective "so what do you think of IOTA's ternary structure?" if they go "it's great! yay!" they are less attractive than someone who goes "I really like IOTA's promise to solve problems
+                        and give new opportunities in deploying IoT devices, but ternary seems a little too forward reaching at this time...".</p>
+                    <p>They show, or can show, over a couple of weeks or months that they are very active in promoting and speaking out on IOTA for specific reasons that show they grasp the tech. So not crypto bro empty enthusiasm, but enthusiasm for IOTA's
+                        technical promise, to grasp that and be vocal about that and show that record.</p>
+                </div>
+            </li>
+        </ul>
+        <h2 class="c-faqs__headline">IEN Membership</h2>
+        <ul class="c-faqs">
+            <li class="c-faq">
+                <span class="c-faq__title">What makes a candidate IEN material?</span>
+                <div class="c-faq__answer">
+                    <p>Candidates should already have something that can bring to the IOTA project: either dev skills, startups, connections, or ability to speak about IOTA in their respective countries. IEN can accelerate the process the candidate is already
+                        doing in this way.</p>
+                    <p>If candidates are weak on IOTA, then should be strong in the biz, dev and connections side. Notable locations IEN is not active yet is excellent, as well as important industries.</p>
+                    <p>It's important if a candidate is either helping by developing (the tech), helping by operating fullnodes, helping by organizing Events/Meetups, writing articles about any IOTA related topic, educating in general, solving specific use
+                        case or whatever, that only he can do. Being excited alone isn't enough.</p>
+                    <p>We're not simply cheerleaders, If we ask a prospective "so what do you think of IOTA's ternary structure?" if they go "it's great! yay!" they are less attractive than someone who goes "I really like IOTA's promise to solve problems
+                        and give new opportunities in deploying IoT devices, but ternary seems a little too forward reaching at this time...".</p>
+                    <p>They show, or can show, over a couple of weeks or months that they are very active in promoting and speaking out on IOTA for specific reasons that show they grasp the tech. So not crypto bro empty enthusiasm, but enthusiasm for IOTA's
+                        technical promise, to grasp that and be vocal about that and show that record.</p>
+                </div>
+            </li>
+        </ul>
+
+        <!-- <span class="c-note">Source: <a href="http://anirudha.org/">anirudha.org</a></span> -->
+    </div>
+
+    <script>
+        $('body').delegate('.c-faq', 'click', function() {
+            $('.c-faq').removeClass('c-faq--active');
+            $(this).addClass('c-faq--active');
+        });
+    </script>

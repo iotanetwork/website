@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include ./partials/head_meta %>
+        <title>
+            <%= title %>
+        </title>
+        <% include ./partials/head_includes %>
+</head>
+
+<body>
+    <div class="wrapper">
+        <% include ./partials/menu %>
+            <%- body -%>
+                <% include ./components/footer %>
+    </div>
+    </div>
+    <% include ./partials/footer_includes %>
+</body>
+
+</html>
