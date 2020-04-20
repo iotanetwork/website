@@ -7,8 +7,7 @@
                         Our Awesome Team
                     </h1>
                     <div class="at-grid" data-column="3" data-wow-delay="0.2s">
-                        <% for (let i = 0; i < teamMembers.length; i++) { if
-                        ([49,5,6,20,46].includes(teamMembers[i]['id'])) { %>
+                        <% for (let i = 0; i < teamMembers.length; i++) { %>
                             <div class="at-column">
                                 <div class="at-user">
                                     <div class="at-user__avatar">
@@ -19,39 +18,26 @@
                                             <%=
                                     teamMembers[i]['lastName'] %>
                                     </div>
-
                                     <ul class="at-social">
-                                        <%
-                                    Object.keys(teamMembers[i]['socialHandles']).forEach(function(key)
-                                    { if (key && key=='discord') { %>
+                                        <% if(teamMembers[i]['socialHandles']) { for (let s = 0; s < Object.keys(teamMembers[i]['socialHandles']).length; s++) { if(teamMembers[i]['socialHandles'][Object.keys(teamMembers[i]['socialHandles'])[s]].length > 0){ if(Object.keys(teamMembers[i]['socialHandles'])[s] == 'discord') { %>
                                             <li class="at-social__item">
-                                                <a href="<%= socialAccounts[key]['baseUrl'] %>"><i
-                                                class="fa <%= socialAccounts[key]['iconClass'] %>"
-                                                aria-hidden="true"
-                                            >
-                                                @<%=
-                                                teamMembers[i]['socialHandles'][key]
-                                                %></i
-                                            ></a
-                                        >
-                                    </li>
-                                    <% } else { %>
-                                    <li class="at-social__item">
-                                        <a
-                                            href="<%= socialAccounts[key]['baseUrl']
-                                            %><%= teamMembers[i]['socialHandles'][key] %>"
-                                            ><i
-                                                class="fa <%= socialAccounts[key]['iconClass'] %>"
-                                                aria-hidden="true"
-                                            ></i
-                                        ></a>
+                                                <a href="<%= socialAccounts[Object.keys(teamMembers[i]['socialHandles'])[s]]['baseUrl'] %>"><i
+                                                    class="fa <%= socialAccounts[Object.keys(teamMembers[i]['socialHandles'])[s]]['iconClass'] %>"
+                                                    aria-hidden="true">
+                                                    @<%= teamMembers[i]['socialHandles'][Object.keys(teamMembers[i]['socialHandles'])[s]] %></i></a>
                                             </li>
-
-                                            <% }}); %>
+                                            <% } else { %>
+                                                <li class="at-social__item">
+                                                    <a href="<%= socialAccounts[Object.keys(teamMembers[i]['socialHandles'])[s]]['baseUrl'] %><%= teamMembers[i]['socialHandles'][Object.keys(teamMembers[i]['socialHandles'])[s]] %>">
+                                                <i class="fa <%= socialAccounts[Object.keys(teamMembers[i]['socialHandles'])[s]]['iconClass'] %>"
+                                                    aria-hidden="true"></i>
+                                            </a>
+                                                </li>
+                                                <% }}}} %>
                                     </ul>
                                 </div>
                             </div>
-                            <% }} %>
+                            <% } %>
                     </div>
                     <a class="btn btn-action btn-gplus wow fadeInDown" href="/team"><span></span> <span>See All</span></a
                     >

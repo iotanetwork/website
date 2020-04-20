@@ -38,16 +38,15 @@ exports.getMemberById = function(memberId, socialAccounts, cb) {
         }
     }).then(result => {
         result = result.get()
-        // console.log('result', result);
-        if(Object.keys(socialAccounts).length>0) {
+            // console.log('result', result);
+        if (Object.keys(socialAccounts).length > 0) {
             Object.keys(socialAccounts).forEach(function(key) {
                 var val = socialAccounts[key];
-                if(!result.socialHandles[key]) {
+                if (!result.socialHandles[key]) {
                     result.socialHandles[key] = '';
                 }
             });
-        }
-        else {
+        } else {
             // console.log(socialAccounts);
             Object.keys(socialAccounts).forEach(function(key) {
                 var val = socialAccounts[key];
@@ -82,7 +81,7 @@ exports.createOrUpdateMember = function(requestData, cb) {
         }
     }).spread((user, created) => {
         if (created) {
-            console.log('user:', user.get({plain: true}));
+            console.log('user:', user.get({ plain: true }));
             // return;
             cb(null, {
                 userData: user,
@@ -126,27 +125,24 @@ exports.memberLoginCheck = function(requestData, cb) {
             email: requestData.email
         }
     }).then(result => {
-        if(result) {
+        if (result) {
             // Check Password
             console.log(requestData.password);
             console.log(result.password);
             const paswordResult = bcrypt.compareSync(requestData.password, result.password)
             console.log('paswordResult:', paswordResult);
-            if(paswordResult) {
+            if (paswordResult) {
                 return result;
-            }
-            else {
+            } else {
                 return null;
             }
-        }
-        else {
+        } else {
             return null;
         }
     }).then(result => {
-        if(Object.keys(result).length>0) {
+        if (Object.keys(result).length > 0) {
             cb(null, result);
-        }
-        else {
+        } else {
             cb('incorrect password')
         }
 

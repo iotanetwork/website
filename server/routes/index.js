@@ -11,29 +11,42 @@ var privatekey = require("../../ien-alpha.json");
 
 router.get("/", function(req, res, next) {
     var socialAccounts = constants.socialAccounts();
-    helpers.getAllMembers(function(err, teamMembers) {
-        if (err) {
-            teamMembers = [];
-        }
-        if (teamMembers.length > 0) {
-            utils.sortTeamMembersByPicture(teamMembers, function(
-                err,
-                teamMembersSorted
-            ) {
+    let teamMemberIdOrder = [49, 5, 6, 20, 46]
+
+    let teamMembers = [];
+    for (var i = 0; i < teamMemberIdOrder.length; i++) {
+        helpers.getMemberById(teamMemberIdOrder[i], socialAccounts, function(err, memberData) {
+            teamMembers.push(memberData)
+            if (teamMembers.length == teamMemberIdOrder.length) {
                 res.render("pages/home", {
                     title: "IOTA Evangelist Network | IEN",
-                    teamMembers: teamMembersSorted,
+                    teamMembers: teamMembers,
                     socialAccounts: socialAccounts,
                 });
-            });
-        } else {
-            res.render("pages/home", {
-                title: "IOTA Evangelist Network | IEN",
-                teamMembers: teamMembers,
-                socialAccounts: socialAccounts,
-            });
-        }
-    });
+            }
+
+        })
+
+    }
+
+    // helpers.getOrderedMembers(teamMemberIdOrder, function(err, teamMembers) {
+    //     if (err) {
+    //         teamMembers = [];
+    //     }
+    //     if (teamMembers.length > 0) {
+    //         res.render("pages/home", {
+    //             title: "IOTA Evangelist Network | IEN",
+    //             teamMembers: teamMembers,
+    //             socialAccounts: socialAccounts,
+    //         });
+    //     } else {
+    //         res.render("pages/home", {
+    //             title: "IOTA Evangelist Network | IEN",
+    //             teamMembers: teamMembers,
+    //             socialAccounts: socialAccounts,
+    //         });
+    //     }
+    // });
 });
 
 router.get("/apply", function(req, res, next) {
@@ -53,6 +66,8 @@ router.get("/team", function(req, res, next) {
                 err,
                 teamMembersSorted
             ) {
+                // console.log('teamMembersSorted:', teamMembersSorted[4])
+                // console.log('socialAccounts:', socialAccounts)
                 res.render("pages/team", {
                     title: "Global Team | IEN",
                     teamMembers: teamMembersSorted,

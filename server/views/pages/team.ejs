@@ -26,6 +26,20 @@
                                                 <%=
                                     teamMembers[i]['lastName'] %>
                                         </div>
+                                        <ul class="at-social">
+                                            <% if(teamMembers[i]['socialHandles']) { for (let s = 0; s < Object.keys(teamMembers[i]['socialHandles']).length; s++) { if(teamMembers[i]['socialHandles'][Object.keys(teamMembers[i]['socialHandles'])[s]].length > 0){ if(Object.keys(teamMembers[i]['socialHandles'])[s] == 'discord') { %>
+                                                <li class="at-social__item">
+                                                    <a href="<%= socialAccounts[Object.keys(teamMembers[i]['socialHandles'])[s]]['baseUrl'] %>"><i class="fa <%= socialAccounts[Object.keys(teamMembers[i]['socialHandles'])[s]]['iconClass'] %>" aria-hidden="true"> @<%= teamMembers[i]['socialHandles'][Object.keys(teamMembers[i]['socialHandles'])[s]] %></i></a>
+                                                </li>
+                                                <% } else { %>
+                                                    <li class="at-social__item">
+                                                        <a href="<%= socialAccounts[Object.keys(teamMembers[i]['socialHandles'])[s]]['baseUrl'] %><%= teamMembers[i]['socialHandles'][Object.keys(teamMembers[i]['socialHandles'])[s]] %>">
+                                                    <i class="fa <%= socialAccounts[Object.keys(teamMembers[i]['socialHandles'])[s]]['iconClass'] %>"
+                                                        aria-hidden="true"></i>
+                                                </a>
+                                                    </li>
+                                                    <% }}}} %>
+                                        </ul>
                                     </div>
                                 </div>
                                 <% } %>
