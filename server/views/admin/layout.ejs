@@ -2,19 +2,22 @@
 <html lang="en" class="no-js">
 
 <head>
-    {% include partials/head_meta.html' %}
-    <title>{{ title }}</title>
-    {% include partials/head_includes.html' %}
+    <% include partials/head_meta.html' %>
+        <title>
+            <%= title %>
+        </title>
+        <% include partials/head_includes.html' %>
 </head>
 
 <body>
     <aside id="left-panel" class="left-panel">
-        {% include partials/menu.html' %}
+        <% include partials/menu.html' %>
     </aside>
     <div id="right-panel" class="right-panel">
-        {% include partials/header.html' %} {% block content %} {% endblock %}
+        <% include partials/header.html' %>
+            <%- body -%>
     </div>
-    {% include partials/footer_includes.html' %}
+    <% include partials/footer_includes.html' %>
 </body>
 
 </html>

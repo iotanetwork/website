@@ -1,114 +1,372 @@
-{% extends '../layout.html' %}
-
-{% block title %} {% endblock %}
-
-{% block content %}
+<% layout('../layout') -%>
     <div class="content mt-3">
         <div class="animated fadeIn">
             <div class="row">
-              <div class="col-lg-6">
-                <div class="card">
-                    <form action="/admin/members/{{ memberData.id }}/update" method="post" enctype="multipart/x-www-form-urlencoded" class="form-horizontal">
-                      <div class="card-header">
-                        <strong>Member #{{ memberData.id }}</strong> Edit
-                      </div>
-                      <div class="card-body card-block">
-                      <!-- <div class="row form-group">
+                <div class="col-lg-6">
+                    <div class="card">
+                        <form action="/admin/members/<%= memberData.id %>/update" method="post" enctype="multipart/x-www-form-urlencoded" class="form-horizontal">
+                            <div class="card-header">
+                                <strong>Member #<%= memberData.id %></strong> Edit
+                            </div>
+                            <div class="card-body card-block">
+                                <!-- <div class="row form-group">
                         <div class="col col-md-3"><label class=" form-control-label">Handle</label></div>
                         <div class="col-12 col-md-9">
-                          <p class="form-control-static">{{ memberData.handle }}</p>
+                          <p class="form-control-static"><%= memberData.handle %></p>
                         </div>
                       </div> -->
-                      <div class="row form-group">
-                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">First Name</label></div>
-                        <div class="col-12 col-md-9"><input type="text" id="firstName" name="firstName" placeholder="First" class="form-control" value="{{ memberData.firstName }}"><small class="form-text text-muted">This is your first name</small></div>
-                      </div>
-                      <div class="row form-group">
-                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Middle Name</label></div>
-                        <div class="col-12 col-md-9"><input type="text" id="middleName" name="middleName" placeholder="Mid" class="form-control" value="{{ memberData.middleName }}"><small class="form-text text-muted">This is your middle name</small></div>
-                      </div>
-                      <div class="row form-group">
-                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Last Name</label></div>
-                        <div class="col-12 col-md-9"><input type="text" id="lastName" name="lastName" placeholder="Last" class="form-control" value="{{ memberData.lastName }}"><small class="form-text text-muted">This is your last name</small></div>
-                      </div>
-                      <div class="row form-group">
-                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Handle</label></div>
-                        <div class="col-12 col-md-9"><input type="text" id="handle" name="handle" placeholder="handle" class="form-control" value="{{ memberData.handle }}"><small class="form-text text-muted">This is your unique username/handle</small></div>
-                      </div>
-                      <div class="row form-group">
-                        <div class="col col-md-3"><label for="email-input" class=" form-control-label">Email</label></div>
-                        <div class="col-12 col-md-9"><input type="email" id="email" name="email" placeholder="email@domain.tld" class="form-control" value="{{ memberData.email }}"><small class="help-block form-text">Your most active email</small></div>
-                      </div>
-                      <div class="row form-group">
-                        <div class="col col-md-3"><label for="textarea-input" class=" form-control-label">Bio</label></div>
-                        <div class="col-12 col-md-9"><textarea name="detail" id="detail" rows="9" placeholder="You are you..." class="form-control">{{ memberData.detail }}</textarea></div>
-                      </div>
-                      <div class="row form-group">
-                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Picture Link</label></div>
-                        <div class="col-12 col-md-9"><input type="text" id="picture" name="picture" placeholder="picture" class="form-control" value="{{ memberData.picture }}"><small class="form-text text-muted">Please use a publicly viewable picture link</small></div>
-                      </div>
-                      <div class="row form-group">
-                        <div class="col col-md-3"><label for="email-input" class=" form-control-label">IEN Email</label></div>
-                        <div class="col-12 col-md-9"><input type="email" id="email-ien" name="ienEmail" placeholder="email@domain.tld" class="form-control" value="{{ memberData.ienEmail }}"><small class="help-block form-text">Your IEN domain email</small></div>
-                      </div>
-
-                      </div>
-                      <div class="card-footer">
-                        <input type="submit" class="btn btn-primary btn-sm" value="Update" />
-                      </div>
-                  </form>
+                                <div class="row form-group">
+                                    <div class="col col-md-3">
+                                        <label for="text-input" class="form-control-label">First Name</label
+                                    >
+                                </div>
+                                <div class="col-12 col-md-9">
+                                    <input
+                                        type="text"
+                                        id="firstName"
+                                        name="firstName"
+                                        placeholder="First"
+                                        class="form-control"
+                                        value="<%= memberData.firstName %>"
+                                    /><small class="form-text text-muted"
+                                        >This is your first name</small
+                                    >
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col col-md-3">
+                                    <label
+                                        for="text-input"
+                                        class="form-control-label"
+                                        >Middle Name</label
+                                    >
+                                </div>
+                                <div class="col-12 col-md-9">
+                                    <input
+                                        type="text"
+                                        id="middleName"
+                                        name="middleName"
+                                        placeholder="Mid"
+                                        class="form-control"
+                                        value="<%= memberData.middleName %>"
+                                    /><small class="form-text text-muted"
+                                        >This is your middle name</small
+                                    >
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col col-md-3">
+                                    <label
+                                        for="text-input"
+                                        class="form-control-label"
+                                        >Last Name</label
+                                    >
+                                </div>
+                                <div class="col-12 col-md-9">
+                                    <input
+                                        type="text"
+                                        id="lastName"
+                                        name="lastName"
+                                        placeholder="Last"
+                                        class="form-control"
+                                        value="<%= memberData.lastName %>"
+                                    /><small class="form-text text-muted"
+                                        >This is your last name</small
+                                    >
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col col-md-3">
+                                    <label
+                                        for="text-input"
+                                        class="form-control-label"
+                                        >Handle</label
+                                    >
+                                </div>
+                                <div class="col-12 col-md-9">
+                                    <input
+                                        type="text"
+                                        id="handle"
+                                        name="handle"
+                                        placeholder="handle"
+                                        class="form-control"
+                                        value="<%= memberData.handle %>"
+                                    /><small class="form-text text-muted"
+                                        >This is your unique
+                                        username/handle</small
+                                    >
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col col-md-3">
+                                    <label
+                                        for="email-input"
+                                        class="form-control-label"
+                                        >Email</label
+                                    >
+                                </div>
+                                <div class="col-12 col-md-9">
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        name="email"
+                                        placeholder="email@domain.tld"
+                                        class="form-control"
+                                        value="<%= memberData.email %>"
+                                    /><small class="help-block form-text"
+                                        >Your most active email</small
+                                    >
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col col-md-3">
+                                    <label
+                                        for="textarea-input"
+                                        class="form-control-label"
+                                        >Bio</label
+                                    >
+                                </div>
+                                <div class="col-12 col-md-9">
+                                    <textarea
+                                        name="detail"
+                                        id="detail"
+                                        rows="9"
+                                        placeholder="You are you..."
+                                        class="form-control"
+                                    >
+<%= memberData.detail %></textarea
+                                    >
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col col-md-3">
+                                    <label
+                                        for="text-input"
+                                        class="form-control-label"
+                                        >Picture Link</label
+                                    >
+                                </div>
+                                <div class="col-12 col-md-9">
+                                    <input
+                                        type="text"
+                                        id="picture"
+                                        name="picture"
+                                        placeholder="picture"
+                                        class="form-control"
+                                        value="<%= memberData.picture %>"
+                                    /><small class="form-text text-muted"
+                                        >Please use a publicly viewable picture
+                                        link</small
+                                    >
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col col-md-3">
+                                    <label
+                                        for="email-input"
+                                        class="form-control-label"
+                                        >IEN Email</label
+                                    >
+                                </div>
+                                <div class="col-12 col-md-9">
+                                    <input
+                                        type="email"
+                                        id="email-ien"
+                                        name="ienEmail"
+                                        placeholder="email@domain.tld"
+                                        class="form-control"
+                                        value="<%= memberData.ienEmail %>"
+                                    /><small class="help-block form-text"
+                                        >Your IEN domain email</small
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <input
+                                type="submit"
+                                class="btn btn-primary btn-sm"
+                                value="Update"
+                            />
+                        </div>
+                    </form>
                 </div>
-              </div>
-              <div class="col-lg-6">
+            </div>
+            <div class="col-lg-6">
                 <div class="card">
-                    <form action="/admin/members/{{ memberData.id }}/update/social" method="post" enctype="multipart/x-www-form-urlencoded" class="form-horizontal">
-                      <div class="card-header">
-                        <strong>Social Links</strong> Edit
-                      </div>
-                      <div class="card-body card-block">
-
-                      <!-- <div class="row form-group">
-                        <div class="col col-md-3"><label class=" form-control-label">Handle</label></div>
-                        <div class="col-12 col-md-9">
-                          <p class="form-control-static">{{ memberData.handle }}</p>
+                    <form
+                        action="/admin/members/<%= memberData.id %>/update/social"
+                        method="post"
+                        enctype="multipart/x-www-form-urlencoded"
+                        class="form-horizontal"
+                    >
+                        <div class="card-header">
+                            <strong>Social Links</strong> Edit
                         </div>
-                      </div> -->
-                      <div class="row form-group">
-                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Website</label></div>
-                        <div class="col-12 col-md-9"><input type="text" id="website" name="website" placeholder="website" class="form-control" value="{{ memberData.socialHandles.website }}"><small class="form-text text-muted">This is your website link</small></div>
-                      </div>
-                      <div class="row form-group">
-                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">LinkedIn</label></div>
-                        <div class="col-12 col-md-9"><input type="text" id="linkedin" name="linkedin" placeholder="linkedin" class="form-control" value="{{ memberData.socialHandles.linkedin }}"><small class="form-text text-muted">This is your linkedin handle</small></div>
-                      </div>
-                      <div class="row form-group">
-                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Discord</label></div>
-                        <div class="col-12 col-md-9"><input type="text" id="discord" name="discord" placeholder="discord" class="form-control" value="{{ memberData.socialHandles.discord }}"><small class="form-text text-muted">This is your discord handle</small></div>
-                      </div>
-                      <div class="row form-group">
-                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Twitter</label></div>
-                        <div class="col-12 col-md-9"><input type="text" id="twitter" name="twitter" placeholder="twitter" class="form-control" value="{{ memberData.socialHandles.twitter }}"><small class="form-text text-muted">This is your twitter handle</small></div>
-                      </div>
-                      <div class="row form-group">
-                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Github</label></div>
-                        <div class="col-12 col-md-9"><input type="text" id="github" name="github" placeholder="github" class="form-control" value="{{ memberData.socialHandles.github }}"><small class="form-text text-muted">This is your github handle</small></div>
-                      </div>
-                      <div class="row form-group">
-                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Facebook</label></div>
-                        <div class="col-12 col-md-9"><input type="text" id="facebook" name="facebook" placeholder="facebook" class="form-control" value="{{ memberData.socialHandles.facebook }}"><small class="form-text text-muted">This is your facebook handle</small></div>
-                      </div>
-                      <div class="row form-group">
-                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Telegram</label></div>
-                        <div class="col-12 col-md-9"><input type="text" id="telegram" name="telegram" placeholder="telegram" class="form-control" value="{{ memberData.socialHandles.telegram }}"><small class="form-text text-muted">This is your telegram handle</small></div>
-                      </div>
-                      </div>
-                      <div class="card-footer">
-                        <input type="submit" class="btn btn-primary btn-sm" value="Update" />
-                      </div>
-                  </form>
+                        <div class="card-body card-block">
+                            <!-- <div class="row form-group">
+                        <div class="col col-md-3"><label class=" form-control-label">Handle</label></div>
+                                    <div class="col-12 col-md-9">
+                                        <p class="form-control-static">
+                                            <%= memberData.handle %>
+                                        </p>
+                                    </div>
+                                </div> -->
+                                <div class="row form-group">
+                                    <div class="col col-md-3">
+                                        <label for="text-input" class="form-control-label">Website</label
+                                    >
+                                </div>
+                                <div class="col-12 col-md-9">
+                                    <input
+                                        type="text"
+                                        id="website"
+                                        name="website"
+                                        placeholder="website"
+                                        class="form-control"
+                                        value="<%= memberData.socialHandles.website %>"
+                                    /><small class="form-text text-muted"
+                                        >This is your website link</small
+                                    >
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col col-md-3">
+                                    <label
+                                        for="text-input"
+                                        class="form-control-label"
+                                        >LinkedIn</label
+                                    >
+                                </div>
+                                <div class="col-12 col-md-9">
+                                    <input
+                                        type="text"
+                                        id="linkedin"
+                                        name="linkedin"
+                                        placeholder="linkedin"
+                                        class="form-control"
+                                        value="<%= memberData.socialHandles.linkedin %>"
+                                    /><small class="form-text text-muted"
+                                        >This is your linkedin handle</small
+                                    >
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col col-md-3">
+                                    <label
+                                        for="text-input"
+                                        class="form-control-label"
+                                        >Discord</label
+                                    >
+                                </div>
+                                <div class="col-12 col-md-9">
+                                    <input
+                                        type="text"
+                                        id="discord"
+                                        name="discord"
+                                        placeholder="discord"
+                                        class="form-control"
+                                        value="<%= memberData.socialHandles.discord %>"
+                                    /><small class="form-text text-muted"
+                                        >This is your discord handle</small
+                                    >
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col col-md-3">
+                                    <label
+                                        for="text-input"
+                                        class="form-control-label"
+                                        >Twitter</label
+                                    >
+                                </div>
+                                <div class="col-12 col-md-9">
+                                    <input
+                                        type="text"
+                                        id="twitter"
+                                        name="twitter"
+                                        placeholder="twitter"
+                                        class="form-control"
+                                        value="<%= memberData.socialHandles.twitter %>"
+                                    /><small class="form-text text-muted"
+                                        >This is your twitter handle</small
+                                    >
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col col-md-3">
+                                    <label
+                                        for="text-input"
+                                        class="form-control-label"
+                                        >Github</label
+                                    >
+                                </div>
+                                <div class="col-12 col-md-9">
+                                    <input
+                                        type="text"
+                                        id="github"
+                                        name="github"
+                                        placeholder="github"
+                                        class="form-control"
+                                        value="<%= memberData.socialHandles.github %>"
+                                    /><small class="form-text text-muted"
+                                        >This is your github handle</small
+                                    >
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col col-md-3">
+                                    <label
+                                        for="text-input"
+                                        class="form-control-label"
+                                        >Facebook</label
+                                    >
+                                </div>
+                                <div class="col-12 col-md-9">
+                                    <input
+                                        type="text"
+                                        id="facebook"
+                                        name="facebook"
+                                        placeholder="facebook"
+                                        class="form-control"
+                                        value="<%= memberData.socialHandles.facebook %>"
+                                    /><small class="form-text text-muted"
+                                        >This is your facebook handle</small
+                                    >
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col col-md-3">
+                                    <label
+                                        for="text-input"
+                                        class="form-control-label"
+                                        >Telegram</label
+                                    >
+                                </div>
+                                <div class="col-12 col-md-9">
+                                    <input
+                                        type="text"
+                                        id="telegram"
+                                        name="telegram"
+                                        placeholder="telegram"
+                                        class="form-control"
+                                        value="<%= memberData.socialHandles.telegram %>"
+                                    /><small class="form-text text-muted"
+                                        >This is your telegram handle</small
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <input
+                                type="submit"
+                                class="btn btn-primary btn-sm"
+                                value="Update"
+                            />
+                        </div>
+                    </form>
                 </div>
-              </div>
             </div>
         </div>
     </div>
-{% endblock %}
+</div>
