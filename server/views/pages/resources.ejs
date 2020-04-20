@@ -36,26 +36,27 @@
                 <!-- <li><a href="#" data-filter=".talk"><h5>Talk</h5></a></li> -->
             </ul>
         </div>
-
         <div id="Portfolio" class="portfolio" style="display: none;">
-            {% for resourceItem in resources %}
-            <div class="portfolio-item {{ resourceItem['type'] }}">
-                <div class="portfolio-image">
-                    <img src="{{ resourceItem['icon'] }}" alt="{{ resourceItem['name'] }}" />
-                </div>
-                <a href="{{ resourceItem['url'] }}" target="_blank">
-                    <div class="project-overlay">
-                        <div class="project-info">
-                            <!-- <i class="fa fa-eye"></i> -->
-                            <h3 class="project-name">
-                                {{ resourceItem["author"] }}
-                            </h3>
-                            <p>{{ resourceItem["name"] }}</p>
-                        </div>
+            <% for (i=0;i<resources.length;i++) { %>
+                <div class="portfolio-item <%= resources[i]['type'] %>">
+                    <div class="portfolio-image">
+                        <img src="<%= resources[i]['icon'] %>" alt="<%= resources[i]['name'] %>" />
                     </div>
-                </a>
-            </div>
-            {% endfor %}
+                    <a href="<%= resources[i]['url'] %>" target="_blank">
+                        <div class="project-overlay">
+                            <div class="project-info">
+                                <!-- <i class="fa fa-eye"></i> -->
+                                <h3 class="project-name">
+                                    <%= resources[i]["author"] %>
+                                </h3>
+                                <p>
+                                    <%= resources[i]["name"] %>
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <% } %>
         </div>
 
         <div id="initial-message-div" class="message-fiv">

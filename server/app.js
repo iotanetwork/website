@@ -34,9 +34,8 @@ app.use(bodyParser.urlencoded({ limit: "50mb", extended: true }));
 // Using ejs
 app.engine("ejs", require("ejs-locals"));
 // *** static directory *** //
-app.set("views", path.join(__dirname, "views"));
+app.set("views", __dirname + "/views");
 app.set("view engine", "ejs");
-
 app.use("/static", express.static("client"));
 
 // *** config middleware *** //
@@ -52,6 +51,7 @@ app.use("/", routes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
+    console.log("route 404:", req.originalUrl);
     var err = new Error("Not Found");
     err.status = 404;
     next(err);

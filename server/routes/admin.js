@@ -220,8 +220,9 @@ router.post("/login", function(req, res, next) {
 });
 
 router.get("*", function(req, res, next) {
+    console.log("route admin:", req.originalUrl);
     res.render("pages/error-pages/not_found", {
-        title: "IOTA Evangelist Netowrk | IEN | 404 | Not Found",
+        title: "IOTA Evangelist Network | IEN | 404 | Not Found",
     });
 });
 

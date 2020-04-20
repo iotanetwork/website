@@ -126,6 +126,7 @@ router.get("/faq", function(req, res, next) {
 
 router.get("/resources", function(req, res, next) {
     var resources = constants.resources();
+    // console.log("resources:", resources);
     res.render("pages/resources", {
         title: "IOTA Evangelist Network | Resources",
         resources: resources,
@@ -145,6 +146,7 @@ router.get("/404", function(req, res, next) {
 });
 
 router.get("*", function(req, res, next) {
+    console.log("route main:", req.originalUrl);
     res.render("pages/error-pages/not_found", {
         title: "IOTA Evangelist Netowrk | IEN | 404 | Not Found",
     });

@@ -1,5 +1,5 @@
 <% layout('../layout') -%>
-    <link rel="stylesheet" href="/static/assets/css/lib/datatable/dataTables.bootstrap.min.css" />
+    <link rel="stylesheet" href="/static/admin/assets/css/lib/datatable/dataTables.bootstrap.min.css" />
     <div class="content mt-3">
         <div class="animated fadeIn">
             <div class="row">
@@ -19,23 +19,23 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <% for teamMember in teamMembers %>
+                                    <% for (i=0;i<teamMembers.length;i++) { %>
                                         <tr>
                                             <td>
-                                                <%=teamMember['firstName']%>
+                                                <%= teamMembers[i]['firstName']%>
                                             </td>
                                             <td>
-                                                <%=teamMember['lastName']%>
+                                                <%= teamMembers[i]['lastName']%>
                                             </td>
                                             <td>
-                                                <%=teamMember['email']%>
+                                                <%= teamMembers[i]['email']%>
                                             </td>
                                             <td>
-                                                <a href="./members/<%=teamMember['id']%>/edit"><span class="ti-pencil-alt"></span
+                                                <a href="./members/<%=teamMembers[i]['id']%>/edit"><span class="ti-pencil-alt"></span
                                         ></a>
                                             </td>
                                         </tr>
-                                        <% endfor %>
+                                        <% } %>
                                 </tbody>
                             </table>
                         </div>
@@ -44,14 +44,14 @@
             </div>
         </div>
     </div>
-    <script src="/static/assets/js/lib/data-table/datatables.min.js"></script>
-    <script src="/static/assets/js/lib/data-table/dataTables.bootstrap.min.js"></script>
-    <script src="/static/assets/js/lib/data-table/dataTables.buttons.min.js"></script>
-    <script src="/static/assets/js/lib/data-table/buttons.bootstrap.min.js"></script>
-    <script src="/static/assets/js/lib/data-table/jszip.min.js"></script>
-    <script src="/static/assets/js/lib/data-table/pdfmake.min.js"></script>
-    <script src="/static/assets/js/lib/data-table/vfs_fonts.js"></script>
-    <script src="/static/assets/js/lib/data-table/buttons.html5.min.js"></script>
-    <script src="/static/assets/js/lib/data-table/buttons.print.min.js"></script>
-    <script src="/static/assets/js/lib/data-table/buttons.colVis.min.js"></script>
-    <script src="/static/assets/js/lib/data-table/datatables-init.js"></script>
+    <script src="/static/admin/assets/js/lib/data-table/datatables.min.js"></script>
+    <script src="/static/admin/assets/js/lib/data-table/dataTables.bootstrap.min.js"></script>
+    <script src="/static/admin/assets/js/lib/data-table/dataTables.buttons.min.js"></script>
+    <script src="/static/admin/assets/js/lib/data-table/buttons.bootstrap.min.js"></script>
+    <script src="/static/admin/assets/js/lib/data-table/jszip.min.js"></script>
+    <script src="/static/admin/assets/js/lib/data-table/pdfmake.min.js"></script>
+    <script src="/static/admin/assets/js/lib/data-table/vfs_fonts.js"></script>
+    <script src="/static/admin/assets/js/lib/data-table/buttons.html5.min.js"></script>
+    <script src="/static/admin/assets/js/lib/data-table/buttons.print.min.js"></script>
+    <script src="/static/admin/assets/js/lib/data-table/buttons.colVis.min.js"></script>
+    <script src="/static/admin/assets/js/lib/data-table/datatables-init.js"></script>
