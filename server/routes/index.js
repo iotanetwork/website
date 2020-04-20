@@ -11,12 +11,15 @@ var privatekey = require("../../ien-alpha.json");
 
 router.get("/", function(req, res, next) {
     var socialAccounts = constants.socialAccounts();
-    let teamMemberIdOrder = [49, 5, 6, 20, 46]
+    let teamMemberIdOrder = [49, 5, 6, 20, 46, 1];
 
     let teamMembers = [];
     for (var i = 0; i < teamMemberIdOrder.length; i++) {
-        helpers.getMemberById(teamMemberIdOrder[i], socialAccounts, function(err, memberData) {
-            teamMembers.push(memberData)
+        helpers.getMemberById(teamMemberIdOrder[i], socialAccounts, function(
+            err,
+            memberData
+        ) {
+            teamMembers.push(memberData);
             if (teamMembers.length == teamMemberIdOrder.length) {
                 res.render("pages/home", {
                     title: "IOTA Evangelist Network | IEN",
@@ -24,9 +27,7 @@ router.get("/", function(req, res, next) {
                     socialAccounts: socialAccounts,
                 });
             }
-
-        })
-
+        });
     }
 
     // helpers.getOrderedMembers(teamMemberIdOrder, function(err, teamMembers) {
