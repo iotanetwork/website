@@ -1,4 +1,4 @@
-# [IEN Website](https://ien.io)
+# [IEN Website](https://iotaevangelist.network)
 
 ## DB Setup
 
