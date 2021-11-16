@@ -8,7 +8,7 @@
     "test": "mocha ./server/views/pages/test"
   },
   "dependencies": {
-    "aws-sdk": "^2.659.0",
+    "aws-sdk": "^2.814.0",
     "bcrypt": "^4.0.1",
     "bcryptjs": "^2.4.3",
     "bluebird": "^3.7.2",
